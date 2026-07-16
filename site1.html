@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contabilidade 18 · Profissional e transparente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background: #F7F6FA;
+            color: #000000;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #000000;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #D77300;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            color: #D77300;
+            font-size: 1.8rem;
+        }
+        .logo span {
+            color: #D77300;
+        }
+        .header-contato {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        .header-contato a {
+            color: #F7F6FA;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .header-contato a:hover {
+            color: #D77300;
+        }
+        .header-contato i {
+            color: #D77300;
+            font-size: 1rem;
+        }
+        .btn-cta-header {
+            background: #D77300;
+            color: #000000 !important;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn-cta-header:hover {
+            background: #E28B00 !important;
+            color: #000 !important;
+            transform: scale(1.02);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 64px 0 80px;
+            background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
+            border-bottom: 2px solid #D77300;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        .hero h1 i {
+            color: #D77300;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+        .hero-botoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .btn-primary {
+            background: #D77300;
+            color: #000000;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background: #E28B00;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #D77300;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid #D77300;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline:hover {
+            background: #D77300;
+            color: #000000;
+        }
+        .hero-imagem {
+            background: #1a1a1a;
+            border-radius: 24px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #D77300;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-imagem span {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #fff;
+            border: 1px solid #D77300;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        .servicos {
+            padding: 72px 0;
+            background: #ffffff;
+        }
+        .section-tag {
+            display: inline-block;
+            background: #D77300;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        .section-sub {
+            color: #666666;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 28px;
+        }
+        .servico-card {
+            background: #F7F6FA;
+            padding: 28px 20px;
+            border-radius: 16px;
+            border-bottom: 4px solid #D77300;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .servico-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        }
+        .servico-card i {
+            font-size: 2.2rem;
+            color: #D77300;
+            margin-bottom: 12px;
+        }
+        .servico-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #000000;
+        }
+        .servico-card p {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre {
+            padding: 72px 0;
+            background: #F7F6FA;
+        }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .sobre-imagem {
+            background: #e8e6ee;
+            border-radius: 24px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: #D77300;
+            border: 2px solid #D77300;
+        }
+        .sobre-texto h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+        .sobre-texto p {
+            color: #666666;
+            margin-bottom: 14px;
+        }
+        .sobre-numeros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+        }
+        .numero-item strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #D77300;
+        }
+        .numero-item span {
+            color: #666666;
+            font-size: 0.85rem;
+        }
+
+        /* ===== DEPOIMENTOS ===== */
+        .depoimentos {
+            padding: 72px 0;
+            background: #ffffff;
+        }
+        .depo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .depo-card {
+            background: #F7F6FA;
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 4px solid #D77300;
+        }
+        .depo-card .estrelas {
+            color: #D77300;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .depo-card p {
+            font-style: italic;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+        .depo-card .autor {
+            font-weight: 600;
+            color: #000000;
+        }
+        .depo-card .cargo {
+            color: #666666;
+            font-size: 0.85rem;
+        }
+
+        /* ===== NOTÍCIAS ===== */
+        .noticias {
+            padding: 72px 0;
+            background: #F7F6FA;
+        }
+        .noticias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            margin-top: 16px;
+        }
+        .noticia-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            border-top: 4px solid #D77300;
+            transition: transform 0.2s;
+        }
+        .noticia-card:hover {
+            transform: translateY(-4px);
+        }
+        .noticia-card .data {
+            font-size: 0.75rem;
+            color: #D77300;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .noticia-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 8px 0 10px;
+            color: #000000;
+        }
+        .noticia-card p {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .noticia-card a {
+            color: #D77300;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .noticia-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            padding: 64px 0;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            border-top: 4px solid #D77300;
+        }
+        .cta-final h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        .cta-final p {
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 28px;
+            font-size: 1.1rem;
+        }
+        .cta-final .btn-primary {
+            background: #D77300;
+            color: #000000;
+        }
+        .cta-final .btn-primary:hover {
+            background: #E28B00;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: #000000;
+            border-top: 1px solid #222;
+            padding: 40px 0 24px;
+            color: #999;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        .footer-grid a:hover {
+            color: #D77300;
+        }
+        .footer-copy {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 992px) {
+            .hero-grid,
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-imagem {
+                height: 200px;
+            }
+            .sobre-imagem {
+                height: 180px;
+            }
+        }
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .header-contato {
+                justify-content: center;
+            }
+            .hero {
+                padding: 40px 0 56px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-calculator"></i> Conta<span>18</span>
+            </div>
+            <div class="header-contato">
+                <a href="mailto:contato@conta18.com.br"><i class="fas fa-envelope"></i> contato@conta18.com.br</a>
+                <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
+                <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Solicitar orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="section-tag"><i class="fas fa-rocket"></i> Contabilidade 4.0</span>
+                <h1>Contabilidade <br /><i>profissional e transparente</i></h1>
+                <p>Dê o próximo passo para uma contabilidade digital e eficiente no seu negócio. Solicite seu orçamento agora!</p>
+                <div class="hero-botoes">
+                    <a href="#" class="btn-primary"><i class="fas fa-arrow-right"></i> Quero um orçamento</a>
+                    <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Conheça nossos planos</a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <span><i class="fas fa-chart-line"></i> + Resultados</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section class="servicos">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-briefcase"></i> Nossos serviços</span>
+            <h2 class="section-title">Soluções ideais para o seu negócio</h2>
+            <p class="section-sub">Do societário ao departamento pessoal, temos a estrutura completa para sua empresa.</p>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Contabilidade</h3>
+                    <p>Departamento contábil pronto para atender suas necessidades legais.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Societário</h3>
+                    <p>Serviços completos em questões legais e administrativas.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Fiscal</h3>
+                    <p>Assessoria completa para atender todas as obrigações fiscais.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Dpto Pessoal</h3>
+                    <p>Execução completa da rotina de departamento de pessoal.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>Financeiro</h3>
+                    <p>Terceirização do financeiro para você focar na gestão.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Abertura de Empresa</h3>
+                    <p>Abra sua empresa com a estrutura societária mais adequada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-imagem">
+                <span style="background:rgba(255,255,255,0.85); padding:16px 28px; border-radius:60px; font-weight:600; font-size:1.4rem; color:#000000;">
+                    <i class="fas fa-users"></i> Equipe qualificada
+                </span>
+            </div>
+            <div class="sobre-texto">
+                <span class="section-tag"><i class="fas fa-info-circle"></i> Sobre nós</span>
+                <h2>Contabilidade profissional e transparente</h2>
+                <p>Somos uma empresa de prestação de serviços contábeis, fiscais, trabalhistas e societários, com foco em soluções para o seu desenvolvimento.</p>
+                <p>Investimos em alta tecnologia e contamos com profissionais que aperfeiçoam constantemente suas competências técnicas.</p>
+                <div class="sobre-numeros">
+                    <div class="numero-item">
+                        <strong>+500</strong>
+                        <span>Clientes satisfeitos</span>
+                    </div>
+                    <div class="numero-item">
+                        <strong>15</strong>
+                        <span>Estados atendidos</span>
+                    </div>
+                    <div class="numero-item">
+                        <strong>98%</strong>
+                        <span>Taxa de satisfação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="depoimentos">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-quote-right"></i> Depoimentos</span>
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-sub">A satisfação de quem confia em nosso trabalho é a nossa maior referência.</p>
+            <div class="depo-grid">
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“As dúvidas são sempre esclarecidas com atendimento prestativo. Pagamentos realizados rigorosamente em dia.”</p>
+                    <div class="autor">Anderson Mota</div>
+                    <div class="cargo">Diretor · Mota Consultoria</div>
+                </div>
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Pontualidade na entrega de documentos e suporte atencioso. Sempre atendem prontamente minhas solicitações.”</p>
+                    <div class="autor">Mariana Lopes</div>
+                    <div class="cargo">Sócia · Lopes & Associados</div>
+                </div>
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Equipe comprometida com a satisfação do cliente, atende todas as necessidades da minha empresa com agilidade e precisão.”</p>
+                    <div class="autor">Cris Rosa</div>
+                    <div class="cargo">CEO · Rosa Tech</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOTÍCIAS ===== -->
+    <section class="noticias">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-newspaper"></i> Atualidades</span>
+            <h2 class="section-title">Fique por dentro das novidades</h2>
+            <p class="section-sub">Notícias que podem afetar você e sua empresa.</p>
+            <div class="noticias-grid">
+                <div class="noticia-card">
+                    <div class="data">16/07/2026</div>
+                    <h4>Abono Salarial 2026: sexto lote é liberado para mais de 4,3 milhões de trabalhadores</h4>
+                    <p>O pagamento do sexto lote do Abono Salarial PIS/Pasep referente ao ano-base 2024 começou nesta semana...</p>
+                    <a href="#">Leia mais →</a>
+                </div>
+                <div class="noticia-card">
+                    <div class="data">16/07/2026</div>
+                    <h4>Receita Federal lança painéis para consulta de dados estatísticos do IRPF</h4>
+                    <p>A Receita Federal disponibilizou novos painéis interativos com informações consolidadas das declarações do IRPF...</p>
+                    <a href="#">Leia mais →</a>
+                </div>
+                <div class="noticia-card">
+                    <div class="data">16/07/2026</div>
+                    <h4>CNPJ terá serviços suspensos de 23 a 27 de julho para implantação de novo modelo</h4>
+                    <p>Empresas e escritórios de contabilidade devem se programar para alterações no funcionamento da base cadastral...</p>
+                    <a href="#">Leia mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Confiança & Inovação</h2>
+            <p>Pare de perder seu tempo com burocracia e solicite um orçamento com a Contabilidade 18.</p>
+            <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero meu orçamento agora</a>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-calculator"></i> Conta18</h4>
+                    <p style="color:#999; font-size:0.9rem;">Contabilidade profissional e transparente para sua empresa.</p>
+                </div>
+                <div>
+                    <h4>Serviços</h4>
+                    <a href="#">Contabilidade</a>
+                    <a href="#">Societário</a>
+                    <a href="#">Fiscal</a>
+                    <a href="#">Departamento Pessoal</a>
+                </div>
+                <div>
+                    <h4>Institucional</h4>
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Planos</a>
+                    <a href="#">Depoimentos</a>
+                    <a href="#">Notícias</a>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <a href="mailto:contato@conta18.com.br"><i class="fas fa-envelope"></i> contato@conta18.com.br</a>
+                    <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
+                    <a href="#"><i class="fab fa-instagram"></i> @conta18</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> /conta18</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Conta18 · Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href && this.href !== '#') return;
+                e.preventDefault();
+                alert('📩 Solicitação de orçamento enviada! Aguarde o contato da nossa equipe.');
+            });
+        });
+        document.querySelectorAll('.btn-plano').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('🚀 Obrigado pelo interesse! Em breve nossa equipe entrará em contato.');
+            });
+        });
+    </script>
+
+</body>
+</html>

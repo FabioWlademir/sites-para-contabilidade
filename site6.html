@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marília Corrêa · Contabilidade e Assessoria Empresarial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8F9FA;
+            color: #1E293B;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #003366;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #F57C00;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            color: #F57C00;
+            font-size: 1.6rem;
+        }
+        .logo span {
+            color: #F57C00;
+        }
+        .logo small {
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: #CBD5E1;
+            display: block;
+            margin-top: -2px;
+        }
+        .header-contato {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        .header-contato a {
+            color: #E2E8F0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .header-contato a:hover {
+            color: #F57C00;
+        }
+        .header-contato i {
+            color: #F57C00;
+            font-size: 1rem;
+        }
+        .btn-cta-header {
+            background: #F57C00;
+            color: #003366 !important;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn-cta-header:hover {
+            background: #FF9800 !important;
+            color: #003366 !important;
+            transform: scale(1.02);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 64px 0 72px;
+            background: linear-gradient(135deg, #003366 0%, #1A4B7A 100%);
+            border-bottom: 2px solid #F57C00;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        .hero h1 i {
+            color: #F57C00;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+        .hero-botoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .btn-primary {
+            background: #F57C00;
+            color: #003366;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background: #FF9800;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #F57C00;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid #F57C00;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline:hover {
+            background: #F57C00;
+            color: #003366;
+        }
+        .hero-imagem {
+            background: #1A4B7A;
+            border-radius: 24px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #F57C00;
+            border: 1px solid #2A5B8A;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-imagem span {
+            background: rgba(0, 51, 102, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #fff;
+            border: 1px solid #F57C00;
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline-block;
+            background: #F57C00;
+            color: #003366;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 14px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        .servicos {
+            padding: 72px 0;
+            background: #ffffff;
+        }
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 32px;
+            margin-top: 16px;
+        }
+        .servico-card {
+            background: #F8F9FA;
+            padding: 28px 20px;
+            border-radius: 16px;
+            border-bottom: 4px solid #F57C00;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .servico-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+        }
+        .servico-card i {
+            font-size: 2.4rem;
+            color: #F57C00;
+            margin-bottom: 12px;
+        }
+        .servico-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #003366;
+        }
+        .servico-card p {
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre {
+            padding: 72px 0;
+            background: #F8F9FA;
+        }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .sobre-imagem {
+            background: #E2E8F0;
+            border-radius: 24px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: #F57C00;
+            border: 2px solid #F57C00;
+        }
+        .sobre-texto h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #003366;
+        }
+        .sobre-texto p {
+            color: #64748B;
+            margin-bottom: 14px;
+        }
+        .sobre-numeros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+        }
+        .numero-item strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F57C00;
+        }
+        .numero-item span {
+            color: #64748B;
+            font-size: 0.85rem;
+        }
+
+        /* ===== DEPOIMENTOS ===== */
+        .depoimentos {
+            padding: 72px 0;
+            background: #ffffff;
+        }
+        .depo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .depo-card {
+            background: #F8F9FA;
+            padding: 24px 28px;
+            border-radius: 16px;
+            border-left: 4px solid #F57C00;
+        }
+        .depo-card .estrelas {
+            color: #F57C00;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .depo-card p {
+            font-style: italic;
+            color: #1E293B;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .depo-card .autor {
+            font-weight: 600;
+            color: #003366;
+        }
+        .depo-card .cargo {
+            color: #64748B;
+            font-size: 0.85rem;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            padding: 64px 0;
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            border-top: 4px solid #F57C00;
+        }
+        .cta-final h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        .cta-final p {
+            color: #CBD5E1;
+            max-width: 600px;
+            margin: 0 auto 28px;
+            font-size: 1.1rem;
+        }
+        .cta-final .btn-primary {
+            background: #F57C00;
+            color: #003366;
+        }
+        .cta-final .btn-primary:hover {
+            background: #FF9800;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: #003366;
+            border-top: 1px solid #1A4B7A;
+            padding: 40px 0 24px;
+            color: #94A3B8;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            color: #94A3B8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        .footer-grid a:hover {
+            color: #F57C00;
+        }
+        .footer-copy {
+            border-top: 1px solid #1A4B7A;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 992px) {
+            .hero-grid, .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-imagem {
+                height: 200px;
+            }
+            .sobre-imagem {
+                height: 180px;
+            }
+        }
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .header-contato {
+                justify-content: center;
+            }
+            .hero {
+                padding: 40px 0 56px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <div>
+                    Marília Corrêa
+                    <small>Contabilidade e Assessoria Empresarial</small>
+                </div>
+            </div>
+            <div class="header-contato">
+                <a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> (11) 99999-9999</a>
+                <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Solicitar orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="badge"><i class="fas fa-star"></i> Excelência em contabilidade</span>
+                <h1>Gestão contábil <br /><i>integrada para economizar tempo</i></h1>
+                <p>Com mais de 15 anos de experiência, oferecemos serviços contábeis, fiscais e trabalhistas com transparência, tecnologia e dedicação.</p>
+                <div class="hero-botoes">
+                    <a href="#" class="btn-primary"><i class="fas fa-arrow-right"></i> Quero um orçamento</a>
+                    <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Conheça nossos serviços</a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <span><i class="fas fa-chart-line"></i> + Resultados · Menos burocracia</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section class="servicos">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:8px;">
+                <span class="badge"><i class="fas fa-briefcase"></i> Nossos serviços</span>
+            </div>
+            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#003366;">Soluções completas para sua empresa</h2>
+            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">Do societário ao departamento pessoal, temos a estrutura que você precisa.</p>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Contabilidade</h3>
+                    <p>Escrituração contábil completa e emissão de relatórios gerenciais.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Assessoria Empresarial</h3>
+                    <p>Planejamento tributário e consultoria para tomada de decisão.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Obrigações Fiscais</h3>
+                    <p>Apuração de impostos e entrega de declarações com precisão.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Departamento Pessoal</h3>
+                    <p>Gestão completa da folha de pagamento e eSocial.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>Financeiro</h3>
+                    <p>Conciliação bancária, fluxo de caixa e controle financeiro.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Abertura de Empresa</h3>
+                    <p>Auxílio na constituição e regularização do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-imagem">
+                <span style="background:rgba(255,255,255,0.85); padding:16px 28px; border-radius:60px; font-weight:600; font-size:1.2rem; color:#003366;">
+                    <i class="fas fa-user-tie"></i> Marília Corrêa
+                </span>
+            </div>
+            <div class="sobre-texto">
+                <span class="badge"><i class="fas fa-info-circle"></i> Sobre nós</span>
+                <h2>Contabilidade com propósito e excelência</h2>
+                <p>Com mais de 15 anos de experiência, a <strong>Marília Corrêa Contabilidade</strong> oferece soluções contábeis, fiscais e trabalhistas com transparência, tecnologia e dedicação.</p>
+                <p>Nossa missão é descomplicar a gestão financeira e tributária da sua empresa, permitindo que você foque no que realmente importa: o crescimento do seu negócio.</p>
+                <div class="sobre-numeros">
+                    <div class="numero-item">
+                        <strong>+500</strong>
+                        <span>Clientes atendidos</span>
+                    </div>
+                    <div class="numero-item">
+                        <strong>15</strong>
+                        <span>Anos de experiência</span>
+                    </div>
+                    <div class="numero-item">
+                        <strong>98%</strong>
+                        <span>Taxa de satisfação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="depoimentos">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:8px;">
+                <span class="badge"><i class="fas fa-quote-right"></i> Depoimentos</span>
+            </div>
+            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#003366;">O que nossos clientes dizem</h2>
+            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">A satisfação de quem confia em nosso trabalho é a nossa maior referência.</p>
+            <div class="depo-grid">
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Atendimento excelente e transparente. A Marília e sua equipe são extremamente competentes e sempre estão disponíveis para esclarecer dúvidas.”</p>
+                    <div class="autor">Carlos Eduardo</div>
+                    <div class="cargo">CEO · Tech Solutions</div>
+                </div>
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“A Marília Corrêa transformou a gestão financeira da minha empresa. Recomendo a todos que buscam seriedade e comprometimento.”</p>
+                    <div class="autor">Fernanda Lima</div>
+                    <div class="cargo">Sócia · Lima & Associados</div>
+                </div>
+                <div class="depo-card">
+                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Profissionalismo e agilidade em todos os serviços. A Marília é uma parceira essencial para o sucesso do nosso negócio.”</p>
+                    <div class="autor">Rafael Oliveira</div>
+                    <div class="cargo">Diretor · Oliveira Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Descomplique sua rotina contábil</h2>
+            <p>Solicite um orçamento agora e descubra como podemos ajudar sua empresa a crescer com segurança e eficiência.</p>
+            <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero meu orçamento agora</a>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-calculator"></i> Marília Corrêa</h4>
+                    <p style="color:#94A3B8; font-size:0.9rem;">Contabilidade e Assessoria Empresarial</p>
+                </div>
+                <div>
+                    <h4>Serviços</h4>
+                    <a href="#">Contabilidade</a>
+                    <a href="#">Assessoria Empresarial</a>
+                    <a href="#">Obrigações Fiscais</a>
+                    <a href="#">Departamento Pessoal</a>
+                </div>
+                <div>
+                    <h4>Institucional</h4>
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Planos</a>
+                    <a href="#">Depoimentos</a>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a>
+                    <a href="#"><i class="fas fa-phone-alt"></i> (11) 99999-9999</a>
+                    <a href="https://fabiowlademir.github.io/"><i class="fas fa-globe"></i> Portfólio</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Marília Corrêa · Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href && this.href !== '#') return;
+                e.preventDefault();
+                alert('📩 Solicitação enviada! Em breve entraremos em contato.');
+            });
+        });
+    </script>
+
+</body>
+</html>
