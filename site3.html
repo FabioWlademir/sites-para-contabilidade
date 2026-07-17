@@ -4,986 +4,256 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contabilidade Digital · Soluções Inteligentes</title>
-
-  <!-- Fonte e ícones -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #0b1a33;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #e9edf4;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #0b1a33;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logo i {
-      color: #1a6bff;
-      font-size: 1.8rem;
-    }
-
-    .logo span {
-      color: #1a6bff;
-    }
-
-    .header-contato {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    .header-contato a {
-      color: #1e293b;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .header-contato a:hover {
-      color: #1a6bff;
-    }
-
-    .header-contato i {
-      color: #1a6bff;
-      font-size: 1.1rem;
-    }
-
-    .btn-cta-header {
-      background: #1a6bff;
-      color: #fff !important;
-      padding: 10px 24px;
-      border-radius: 40px;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    .btn-cta-header:hover {
-      background: #0e4fc9 !important;
-      transform: scale(1.02);
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      padding: 64px 0 80px;
-      background: linear-gradient(145deg, #ffffff 0%, #f1f6fe 100%);
-      border-bottom: 1px solid #e9edf4;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      color: #0b1a33;
-    }
-
-    .hero h1 i {
-      color: #1a6bff;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #334155;
-      max-width: 540px;
-      margin-bottom: 32px;
-    }
-
-    .hero-botoes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .btn-primary {
-      background: #1a6bff;
-      color: #fff;
-      padding: 14px 36px;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s, transform 0.1s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary:hover {
-      background: #0e4fc9;
-      transform: scale(1.02);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #1a6bff;
-      padding: 14px 36px;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 2px solid #1a6bff;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-outline:hover {
-      background: #1a6bff;
-      color: #fff;
-    }
-
-    .hero-imagem {
-      background: #dce6f5;
-      border-radius: 24px;
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: #1a6bff;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a6bff" opacity="0.08"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>');
-      background-repeat: repeat;
-      background-size: 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-imagem span {
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(4px);
-      padding: 16px 32px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #0b1a33;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    }
-
-    /* ===== SEÇÃO SERVIÇOS ===== */
-    .servicos {
-      padding: 72px 0;
-      background: #ffffff;
-    }
-
-    .section-tag {
-      display: inline-block;
-      background: #e6edfc;
-      color: #1a6bff;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 16px;
-      border-radius: 40px;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-
-    .section-sub {
-      color: #475569;
-      max-width: 600px;
-      margin-bottom: 40px;
-    }
-
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-    }
-
-    .servico-card {
-      background: #f8fafc;
-      padding: 32px 24px;
-      border-radius: 20px;
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .servico-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.04);
-    }
-
-    .servico-card i {
-      font-size: 2.4rem;
-      color: #1a6bff;
-      margin-bottom: 16px;
-    }
-
-    .servico-card h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .servico-card p {
-      color: #475569;
-      font-size: 0.95rem;
-    }
-
-    /* ===== PLANOS ===== */
-    .planos {
-      padding: 72px 0;
-      background: #f1f6fe;
-    }
-
-    .planos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 16px;
-    }
-
-    .plano-card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 32px 28px;
-      border: 1px solid #e2e8f0;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .plano-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-    }
-
-    .plano-card.destaque {
-      border: 2px solid #1a6bff;
-      background: #ffffff;
-      position: relative;
-    }
-
-    .plano-card.destaque::before {
-      content: "MAIS VENDIDO";
-      position: absolute;
-      top: -12px;
-      right: 24px;
-      background: #1a6bff;
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 16px;
-      border-radius: 40px;
-      letter-spacing: 0.5px;
-    }
-
-    .plano-nome {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1e293b;
-    }
-
-    .plano-preco {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #0b1a33;
-      margin: 8px 0 4px;
-    }
-
-    .plano-preco small {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #64748b;
-    }
-
-    .plano-desc {
-      color: #475569;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-
-    .plano-lista {
-      list-style: none;
-      margin: 16px 0 28px;
-      flex: 1;
-    }
-
-    .plano-lista li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-      color: #1e293b;
-    }
-
-    .plano-lista i {
-      color: #1a6bff;
-      font-size: 1rem;
-      margin-top: 2px;
-    }
-
-    .btn-plano {
-      background: #1a6bff;
-      color: #fff;
-      border: none;
-      padding: 14px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-plano:hover {
-      background: #0e4fc9;
-    }
-
-    .btn-plano-outline {
-      background: transparent;
-      color: #1a6bff;
-      border: 2px solid #1a6bff;
-    }
-
-    .btn-plano-outline:hover {
-      background: #1a6bff;
-      color: #fff;
-    }
-
-    /* ===== SOBRE ===== */
-    .sobre {
-      padding: 72px 0;
-      background: #ffffff;
-    }
-
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .sobre-imagem {
-      background: #dce6f5;
-      border-radius: 24px;
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: #1a6bff;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a6bff" opacity="0.06"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>');
-      background-repeat: repeat;
-      background-size: 60px;
-    }
-
-    .sobre-texto h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .sobre-texto p {
-      color: #475569;
-      margin-bottom: 16px;
-    }
-
-    .sobre-numeros {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin-top: 24px;
-    }
-
-    .numero-item {
-      text-align: center;
-    }
-
-    .numero-item strong {
-      display: block;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #1a6bff;
-    }
-
-    .numero-item span {
-      color: #475569;
-      font-size: 0.9rem;
-    }
-
-    /* ===== DEPOIMENTOS ===== */
-    .depoimentos {
-      padding: 72px 0;
-      background: #f8fafc;
-    }
-
-    .depo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 16px;
-    }
-
-    .depo-card {
-      background: #ffffff;
-      padding: 28px;
-      border-radius: 20px;
-      border: 1px solid #eef2f6;
-    }
-
-    .depo-card p {
-      font-style: italic;
-      color: #1e293b;
-      margin-bottom: 16px;
-    }
-
-    .depo-card .autor {
-      font-weight: 600;
-      color: #0b1a33;
-    }
-
-    .depo-card .cargo {
-      color: #64748b;
-      font-size: 0.85rem;
-    }
-
-    .depo-card .estrelas {
-      color: #fbbf24;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    /* ===== NOTÍCIAS ===== */
-    .noticias {
-      padding: 72px 0;
-      background: #ffffff;
-    }
-
-    .noticias-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 16px;
-    }
-
-    .noticia-card {
-      background: #f8fafc;
-      border-radius: 20px;
-      padding: 24px;
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s;
-    }
-
-    .noticia-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .noticia-card .data {
-      font-size: 0.8rem;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    .noticia-card h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 8px 0 12px;
-    }
-
-    .noticia-card a {
-      color: #1a6bff;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .noticia-card a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== CTA FINAL ===== */
-    .cta-final {
-      padding: 64px 0;
-      background: #0b1a33;
-      color: #fff;
-      text-align: center;
-    }
-
-    .cta-final h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-
-    .cta-final p {
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 32px;
-      font-size: 1.1rem;
-    }
-
-    .cta-final .btn-primary {
-      background: #ffffff;
-      color: #0b1a33;
-    }
-
-    .cta-final .btn-primary:hover {
-      background: #e2e8f0;
-    }
-
-    /* ===== RODAPÉ ===== */
-    footer {
-      background: #0b1a33;
-      border-top: 1px solid #1e293b;
-      padding: 40px 0 24px;
-      color: #94a3b8;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-
-    .footer-grid h4 {
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .footer-grid a {
-      color: #94a3b8;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    .footer-grid a:hover {
-      color: #fff;
-    }
-
-    .footer-copy {
-      border-top: 1px solid #1e293b;
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* ===== RESPONSIVIDADE ===== */
-    @media (max-width: 992px) {
-      .hero-grid, .sobre-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero-imagem {
-        height: 200px;
-      }
-
-      .sobre-imagem {
-        height: 200px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .header-contato {
-        justify-content: center;
-      }
-
-      .hero {
-        padding: 40px 0 56px;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .plano-preco {
-        font-size: 2rem;
-      }
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#f8fafc; color:#0b1a33; line-height:1.6; }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+    header { background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.03); padding:16px 0; position:sticky; top:0; z-index:100; border-bottom:1px solid #e9edf4; }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .logo { font-size:1.6rem; font-weight:800; letter-spacing:-0.5px; color:#0b1a33; display:flex; align-items:center; gap:8px; }
+    .logo i { color:#1a6bff; font-size:1.8rem; }
+    .logo span { color:#1a6bff; }
+    .header-contato { display:flex; align-items:center; gap:24px; flex-wrap:wrap; font-size:0.95rem; }
+    .header-contato a { color:#1e293b; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:500; transition:color 0.2s; }
+    .header-contato a:hover { color:#1a6bff; }
+    .header-contato i { color:#1a6bff; font-size:1.1rem; }
+    .btn-cta-header { background:#1a6bff; color:#fff !important; padding:10px 24px; border-radius:40px; font-weight:600; transition:background 0.2s,transform 0.1s; }
+    .btn-cta-header:hover { background:#0e4fc9 !important; transform:scale(1.02); }
+    .hero { padding:64px 0 80px; background:linear-gradient(145deg,#fff,#f1f6fe); border-bottom:1px solid #e9edf4; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .hero h1 { font-size:2.8rem; font-weight:800; letter-spacing:-1px; line-height:1.2; margin-bottom:20px; color:#0b1a33; }
+    .hero h1 i { color:#1a6bff; }
+    .hero p { font-size:1.2rem; color:#334155; max-width:540px; margin-bottom:32px; }
+    .hero-botoes { display:flex; flex-wrap:wrap; gap:16px; }
+    .btn-primary { background:#1a6bff; color:#fff; padding:14px 36px; border-radius:40px; font-weight:600; display:inline-flex; align-items:center; gap:10px; transition:background 0.2s,transform 0.1s; border:none; cursor:pointer; font-size:1rem; }
+    .btn-primary:hover { background:#0e4fc9; transform:scale(1.02); }
+    .btn-outline { background:transparent; color:#1a6bff; padding:14px 36px; border-radius:40px; font-weight:600; border:2px solid #1a6bff; transition:background 0.2s,color 0.2s; }
+    .btn-outline:hover { background:#1a6bff; color:#fff; }
+    .hero-imagem { background:#dce6f5; border-radius:24px; height:320px; display:flex; align-items:center; justify-content:center; font-size:4rem; color:#1a6bff; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a6bff" opacity="0.08"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>'); background-repeat:repeat; background-size:60px; overflow:hidden; }
+    .hero-imagem span { background:rgba(255,255,255,0.7); backdrop-filter:blur(4px); padding:16px 32px; border-radius:60px; font-weight:700; font-size:1.5rem; color:#0b1a33; box-shadow:0 8px 24px rgba(0,0,0,0.05); }
+    .section-tag { display:inline-block; background:#e6edfc; color:#1a6bff; font-weight:600; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; padding:6px 16px; border-radius:40px; margin-bottom:12px; }
+    .section-title { font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:12px; }
+    .section-sub { color:#475569; max-width:600px; margin-bottom:40px; }
+    .servicos { padding:72px 0; background:#fff; }
+    .servicos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; }
+    .servico-card { background:#f8fafc; padding:32px 24px; border-radius:20px; border:1px solid #eef2f6; transition:transform 0.2s,box-shadow 0.2s; }
+    .servico-card:hover { transform:translateY(-6px); box-shadow:0 12px 32px rgba(0,0,0,0.04); }
+    .servico-card i { font-size:2.4rem; color:#1a6bff; margin-bottom:16px; }
+    .servico-card h3 { font-size:1.2rem; font-weight:600; margin-bottom:8px; }
+    .servico-card p { color:#475569; font-size:0.95rem; }
+    .planos { padding:72px 0; background:#f1f6fe; }
+    .planos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px; margin-top:16px; }
+    .plano-card { background:#fff; border-radius:24px; padding:32px 28px; border:1px solid #e2e8f0; transition:transform 0.2s,box-shadow 0.2s; display:flex; flex-direction:column; }
+    .plano-card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.04); }
+    .plano-card.destaque { border:2px solid #1a6bff; position:relative; }
+    .plano-card.destaque::before { content:"MAIS VENDIDO"; position:absolute; top:-12px; right:24px; background:#1a6bff; color:#fff; font-size:0.7rem; font-weight:700; padding:4px 16px; border-radius:40px; letter-spacing:0.5px; }
+    .plano-nome { font-size:1.1rem; font-weight:600; color:#1e293b; }
+    .plano-preco { font-size:2.4rem; font-weight:800; color:#0b1a33; margin:8px 0 4px; }
+    .plano-preco small { font-size:1rem; font-weight:400; color:#64748b; }
+    .plano-desc { color:#475569; margin-bottom:20px; font-size:0.95rem; }
+    .plano-lista { list-style:none; margin:16px 0 28px; flex:1; }
+    .plano-lista li { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-size:0.95rem; color:#1e293b; }
+    .plano-lista i { color:#1a6bff; font-size:1rem; margin-top:2px; }
+    .btn-plano { background:#1a6bff; color:#fff; border:none; padding:14px; border-radius:40px; font-weight:600; font-size:1rem; cursor:pointer; transition:background 0.2s; text-align:center; text-decoration:none; display:inline-block; }
+    .btn-plano:hover { background:#0e4fc9; }
+    .btn-plano-outline { background:transparent; color:#1a6bff; border:2px solid #1a6bff; }
+    .btn-plano-outline:hover { background:#1a6bff; color:#fff; }
+    .sobre { padding:72px 0; background:#fff; }
+    .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .sobre-imagem { background:#dce6f5; border-radius:24px; height:260px; display:flex; align-items:center; justify-content:center; font-size:4rem; color:#1a6bff; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a6bff" opacity="0.06"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>'); background-repeat:repeat; background-size:60px; }
+    .sobre-texto h2 { font-size:2rem; font-weight:700; margin-bottom:16px; }
+    .sobre-texto p { color:#475569; margin-bottom:16px; }
+    .sobre-numeros { display:flex; flex-wrap:wrap; gap:32px; margin-top:24px; }
+    .numero-item { text-align:center; }
+    .numero-item strong { display:block; font-size:2rem; font-weight:800; color:#1a6bff; }
+    .numero-item span { color:#475569; font-size:0.9rem; }
+    .depoimentos { padding:72px 0; background:#f8fafc; }
+    .depo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin-top:16px; }
+    .depo-card { background:#fff; padding:28px; border-radius:20px; border:1px solid #eef2f6; }
+    .depo-card p { font-style:italic; color:#1e293b; margin-bottom:16px; }
+    .depo-card .autor { font-weight:600; color:#0b1a33; }
+    .depo-card .cargo { color:#64748b; font-size:0.85rem; }
+    .depo-card .estrelas { color:#fbbf24; letter-spacing:2px; margin-bottom:8px; }
+    .noticias { padding:72px 0; background:#fff; }
+    .noticias-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:32px; margin-top:16px; }
+    .noticia-card { background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #eef2f6; transition:transform 0.2s; }
+    .noticia-card:hover { transform:translateY(-4px); }
+    .noticia-card .data { font-size:0.8rem; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+    .noticia-card h4 { font-size:1.1rem; font-weight:600; margin:8px 0 12px; }
+    .noticia-card a { color:#1a6bff; font-weight:600; text-decoration:none; }
+    .noticia-card a:hover { text-decoration:underline; }
+    .cta-final { padding:64px 0; background:#0b1a33; color:#fff; text-align:center; }
+    .cta-final h2 { font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:12px; }
+    .cta-final p { color:#cbd5e1; max-width:600px; margin:0 auto 32px; font-size:1.1rem; }
+    .cta-final .btn-primary { background:#fff; color:#0b1a33; }
+    .cta-final .btn-primary:hover { background:#e2e8f0; }
+    footer { background:#0b1a33; border-top:1px solid #1e293b; padding:40px 0 24px; color:#94a3b8; }
+    .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:32px; margin-bottom:32px; }
+    .footer-grid h4 { color:#fff; font-weight:600; margin-bottom:12px; }
+    .footer-grid a { color:#94a3b8; text-decoration:none; display:block; margin-bottom:6px; font-size:0.95rem; }
+    .footer-grid a:hover { color:#fff; }
+    .footer-copy { border-top:1px solid #1e293b; padding-top:24px; text-align:center; font-size:0.9rem; }
+    .whatsapp-float { position:fixed; bottom:25px; right:25px; background:#25d366; color:#fff; padding:14px 22px; border-radius:50px; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.9rem; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:999; animation:pulse 2s infinite; transition:0.3s; text-decoration:none; }
+    .whatsapp-float:hover { transform:scale(1.04); background:#1ebe5c; }
+    @keyframes pulse { 0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.6)} 70%{transform:scale(1.02);box-shadow:0 0 0 12px rgba(37,211,102,0)} 100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+    @media(max-width:992px){ .hero-grid,.sobre-grid{grid-template-columns:1fr} .hero h1{font-size:2.2rem} .hero-imagem{height:200px} .sobre-imagem{height:200px} }
+    @media(max-width:640px){ .header-inner{flex-direction:column;align-items:stretch} .header-contato{justify-content:center} .hero{padding:40px 0 56px} .hero h1{font-size:1.8rem} .section-title{font-size:1.8rem} .plano-preco{font-size:2rem} }
   </style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
-<header>
-  <div class="container header-inner">
-    <div class="logo">
-      <i class="fas fa-calculator"></i> Conta<span>Digital</span>
-    </div>
-    <div class="header-contato">
-      <a href="mailto:contato@contadigital.com.br"><i class="fas fa-envelope"></i> contato@contadigital.com.br</a>
-      <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
-      <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Solicitar orçamento</a>
-    </div>
-  </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="section-tag"><i class="fas fa-rocket"></i> Contabilidade 4.0</span>
-      <h1>Soluções contábeis <br><i>inteligentes</i> para empresas de todos os portes</h1>
-      <p>Dê o próximo passo para uma contabilidade digital e eficiente no seu negócio. Entre em contato e solicite seu orçamento agora para ver como podemos fazer a diferença!</p>
-      <div class="hero-botoes">
-        <a href="#" class="btn-primary"><i class="fas fa-arrow-right"></i> Quero um orçamento</a>
-        <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Conheça nossos planos</a>
-      </div>
-    </div>
-    <div class="hero-imagem">
-      <span><i class="fas fa-chart-line"></i> + Resultados</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVIÇOS ===== -->
-<section class="servicos">
-  <div class="container">
-    <span class="section-tag"><i class="fas fa-briefcase"></i> Nossos serviços</span>
-    <h2 class="section-title">Soluções ideais para o seu negócio</h2>
-    <p class="section-sub">Do societário ao departamento pessoal, temos a estrutura completa para sua empresa.</p>
-
-    <div class="servicos-grid">
-      <div class="servico-card">
-        <i class="fas fa-building"></i>
-        <h3>Societário</h3>
-        <p>Serviços completos em questões legais e administrativas junto aos órgãos públicos e privados.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-balance-scale"></i>
-        <h3>Contabilidade</h3>
-        <p>Nosso departamento contábil está pronto para atender todas as necessidades legais da sua empresa.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-coins"></i>
-        <h3>Financeiro</h3>
-        <p>Terceirização do financeiro para que você se mantenha focado na gestão do seu negócio.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-user-plus"></i>
-        <h3>Abertura de Empresa</h3>
-        <p>Abra sua empresa com a estrutura societária mais adequada, com foco em economia tributária.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-file-invoice"></i>
-        <h3>Fiscal</h3>
-        <p>Assessoria completa para atender todas as obrigações fiscais da sua empresa.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-users"></i>
-        <h3>Departamento Pessoal</h3>
-        <p>Execução completa da rotina de departamento pessoal, com segurança e agilidade.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PLANOS ===== -->
-<section class="planos">
-  <div class="container">
-    <span class="section-tag"><i class="fas fa-tag"></i> Planos</span>
-    <h2 class="section-title">Escolha o plano ideal para sua empresa</h2>
-    <p class="section-sub">Soluções que cabem no seu bolso, com transparência e sem surpresas.</p>
-
-    <div class="planos-grid">
-      <!-- Plano 1 -->
-      <div class="plano-card">
-        <div class="plano-nome">Plano Essencial</div>
-        <div class="plano-preco">R$ 99,99 <small>/mês</small></div>
-        <div class="plano-desc">Ideal para microempresas ou empreendedores individuais.</div>
-        <ul class="plano-lista">
-          <li><i class="fas fa-check-circle"></i> Emissão de até 10 notas fiscais/mês</li>
-          <li><i class="fas fa-check-circle"></i> Declaração mensal de impostos</li>
-          <li><i class="fas fa-check-circle"></i> Suporte contábil por e-mail</li>
-          <li><i class="fas fa-check-circle"></i> Relatório financeiro básico</li>
-        </ul>
-        <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
-      </div>
-
-      <!-- Plano 2 (Destaque) -->
-      <div class="plano-card destaque">
-        <div class="plano-nome">Plano Profissional</div>
-        <div class="plano-preco">R$ 269,99 <small>/mês</small></div>
-        <div class="plano-desc">Perfeito para pequenas empresas que precisam de suporte abrangente.</div>
-        <ul class="plano-lista">
-          <li><i class="fas fa-check-circle"></i> Emissão de até 20 notas fiscais/mês</li>
-          <li><i class="fas fa-check-circle"></i> Declaração + encargos trabalhistas</li>
-          <li><i class="fas fa-check-circle"></i> Suporte por e-mail e telefone</li>
-          <li><i class="fas fa-check-circle"></i> Relatório financeiro detalhado</li>
-          <li><i class="fas fa-check-circle"></i> Consultoria contábil trimestral</li>
-        </ul>
-        <a href="#" class="btn-plano">Assinar agora</a>
-      </div>
-
-      <!-- Plano 3 -->
-      <div class="plano-card">
-        <div class="plano-nome">Plano Empresarial</div>
-        <div class="plano-preco">R$ 699,99 <small>/mês</small></div>
-        <div class="plano-desc">Solução completa para empresas que precisam de acompanhamento contínuo.</div>
-        <ul class="plano-lista">
-          <li><i class="fas fa-check-circle"></i> Notas fiscais ilimitadas</li>
-          <li><i class="fas fa-check-circle"></i> Obrigações acessórias completas</li>
-          <li><i class="fas fa-check-circle"></i> Suporte ilimitado (chat, e-mail, telefone)</li>
-          <li><i class="fas fa-check-circle"></i> Relatórios mensais e trimestrais</li>
-          <li><i class="fas fa-check-circle"></i> Planejamento financeiro e consultoria</li>
-        </ul>
-        <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOBRE ===== -->
-<section class="sobre">
-  <div class="container sobre-grid">
-    <div class="sobre-imagem">
-      <span style="background:rgba(255,255,255,0.7); backdrop-filter:blur(4px); padding:16px 32px; border-radius:60px; font-weight:700; font-size:1.5rem; color:#0b1a33;">
-        <i class="fas fa-users"></i> Equipe qualificada
-      </span>
-    </div>
-    <div class="sobre-texto">
-      <span class="section-tag"><i class="fas fa-info-circle"></i> Sobre nós</span>
-      <h2>Contabilidade transparente e sem burocracia</h2>
-      <p>Somos uma empresa de prestação de serviços contábeis, fiscais, trabalhistas e societários, que tem como objetivo atender empresas que desejam as melhores soluções para o seu desenvolvimento.</p>
-      <p>Investimos constantemente em alta tecnologia e contamos com profissionais que frequentemente aperfeiçoam suas competências técnicas. Somos motivados pela sua satisfação.</p>
-      <div class="sobre-numeros">
-        <div class="numero-item">
-          <strong>+500</strong>
-          <span>Clientes satisfeitos</span>
+    <header>
+        <div class="container header-inner">
+            <div class="logo"><i class="fas fa-calculator"></i> Conta<span>Digital</span></div>
+            <div class="header-contato">
+                <a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a>
+                <a href="https://wa.me/5551998883187"><i class="fas fa-phone-alt"></i> (51) 9988-83187</a>
+                <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Solicitar orçamento</a>
+            </div>
         </div>
-        <div class="numero-item">
-          <strong>15</strong>
-          <span>Estados atendidos</span>
+    </header>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="section-tag"><i class="fas fa-rocket"></i> Contabilidade 4.0</span>
+                <h1>Soluções contábeis <br><i>inteligentes</i> para empresas de todos os portes</h1>
+                <p>Dê o próximo passo para uma contabilidade digital e eficiente no seu negócio. Entre em contato e solicite seu orçamento agora para ver como podemos fazer a diferença!</p>
+                <div class="hero-botoes">
+                    <a href="#" class="btn-primary"><i class="fas fa-arrow-right"></i> Quero um orçamento</a>
+                    <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Conheça nossos planos</a>
+                </div>
+            </div>
+            <div class="hero-imagem"><span><i class="fas fa-chart-line"></i> + Resultados</span></div>
         </div>
-        <div class="numero-item">
-          <strong>98%</strong>
-          <span>Taxa de satisfação</span>
+    </section>
+    <section class="servicos">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-briefcase"></i> Nossos serviços</span>
+            <h2 class="section-title">Soluções ideais para o seu negócio</h2>
+            <p class="section-sub">Do societário ao departamento pessoal, temos a estrutura completa para sua empresa.</p>
+            <div class="servicos-grid">
+                <div class="servico-card"><i class="fas fa-building"></i><h3>Societário</h3><p>Serviços completos em questões legais e administrativas junto aos órgãos públicos e privados.</p></div>
+                <div class="servico-card"><i class="fas fa-balance-scale"></i><h3>Contabilidade</h3><p>Nosso departamento contábil está pronto para atender todas as necessidades legais da sua empresa.</p></div>
+                <div class="servico-card"><i class="fas fa-coins"></i><h3>Financeiro</h3><p>Terceirização do financeiro para que você se mantenha focado na gestão do seu negócio.</p></div>
+                <div class="servico-card"><i class="fas fa-user-plus"></i><h3>Abertura de Empresa</h3><p>Abra sua empresa com a estrutura societária mais adequada, com foco em economia tributária.</p></div>
+                <div class="servico-card"><i class="fas fa-file-invoice"></i><h3>Fiscal</h3><p>Assessoria completa para atender todas as obrigações fiscais da sua empresa.</p></div>
+                <div class="servico-card"><i class="fas fa-users"></i><h3>Departamento Pessoal</h3><p>Execução completa da rotina de departamento pessoal, com segurança e agilidade.</p></div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== DEPOIMENTOS ===== -->
-<section class="depoimentos">
-  <div class="container">
-    <span class="section-tag"><i class="fas fa-quote-right"></i> Depoimentos</span>
-    <h2 class="section-title">O que nossos clientes dizem</h2>
-    <p class="section-sub">A satisfação de quem confia em nosso trabalho é a nossa maior referência.</p>
-
-    <div class="depo-grid">
-      <div class="depo-card">
-        <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>“Equipe comprometida com a satisfação do cliente, atende todas as necessidades da minha empresa com agilidade e precisão.”</p>
-        <div class="autor">Cris Rosa</div>
-        <div class="cargo">CEO · Rosa Tech</div>
-      </div>
-      <div class="depo-card">
-        <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>“As dúvidas são sempre esclarecidas com atendimento prestativo. Pagamentos realizados rigorosamente em dia. Excelente empresa!”</p>
-        <div class="autor">Anderson Mota</div>
-        <div class="cargo">Diretor · Mota Consultoria</div>
-      </div>
-      <div class="depo-card">
-        <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>“Pontualidade na entrega de documentos e suporte atencioso. Sempre atendem prontamente minhas solicitações.”</p>
-        <div class="autor">Mariana Lopes</div>
-        <div class="cargo">Sócia · Lopes & Associados</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== NOTÍCIAS ===== -->
-<section class="noticias">
-  <div class="container">
-    <span class="section-tag"><i class="fas fa-newspaper"></i> Atualidades</span>
-    <h2 class="section-title">Fique por dentro das novidades</h2>
-    <p class="section-sub">Notícias que podem afetar você e sua empresa. Acompanhe as últimas atualizações.</p>
-
-    <div class="noticias-grid">
-      <div class="noticia-card">
-        <div class="data">16/07/2026</div>
-        <h4>Abono Salarial 2026: sexto lote é liberado para mais de 4,3 milhões de trabalhadores</h4>
-        <p style="color:#475569; margin-bottom:12px;">O pagamento do sexto lote do Abono Salarial PIS/Pasep referente ao ano-base 2024 começou nesta semana...</p>
-        <a href="#">Leia mais →</a>
-      </div>
-      <div class="noticia-card">
-        <div class="data">16/07/2026</div>
-        <h4>Receita Federal lança painéis para consulta de dados estatísticos do IRPF</h4>
-        <p style="color:#475569; margin-bottom:12px;">A Receita Federal disponibilizou novos painéis interativos com informações consolidadas das declarações do IRPF...</p>
-        <a href="#">Leia mais →</a>
-      </div>
-      <div class="noticia-card">
-        <div class="data">16/07/2026</div>
-        <h4>CNPJ terá serviços suspensos de 23 a 27 de julho para implantação de novo modelo</h4>
-        <p style="color:#475569; margin-bottom:12px;">Empresas e escritórios de contabilidade devem se programar para alterações no funcionamento da base cadastral...</p>
-        <a href="#">Leia mais →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA FINAL ===== -->
-<section class="cta-final">
-  <div class="container">
-    <h2>Pare de perder tempo com burocracia</h2>
-    <p>Solicite um orçamento hoje mesmo e descubra soluções personalizadas para a sua empresa. A contabilidade da sua empresa pode ser mais simples e eficiente do que você imagina.</p>
-    <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero meu orçamento agora</a>
-  </div>
-</section>
-
-<!-- ===== RODAPÉ ===== -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4><i class="fas fa-calculator"></i> ContaDigital</h4>
-        <p style="color:#94a3b8; font-size:0.95rem;">Soluções contábeis inteligentes para empresas de todos os portes.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <a href="#">Contabilidade</a>
-        <a href="#">Societário</a>
-        <a href="#">Fiscal</a>
-        <a href="#">Departamento Pessoal</a>
-      </div>
-      <div>
-        <h4>Institucional</h4>
-        <a href="#">Sobre nós</a>
-        <a href="#">Planos</a>
-        <a href="#">Depoimentos</a>
-        <a href="#">Notícias</a>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <a href="mailto:contato@contadigital.com.br"><i class="fas fa-envelope"></i> contato@contadigital.com.br</a>
-        <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
-        <a href="#"><i class="fab fa-instagram"></i> @contadigital</a>
-        <a href="#"><i class="fab fa-linkedin"></i> /contadigital</a>
-      </div>
-    </div>
-    <div class="footer-copy">
-      &copy; 2026 ContaDigital · Todos os direitos reservados.
-    </div>
-  </div>
-</footer>
-
-<!-- ===== JS (interações leves) ===== -->
-<script>
-  (function() {
-    // Smooth scroll para âncoras (caso existam)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === "#") return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Botão "Assinar agora" – alerta demonstrativo
-    const botoesAssinar = document.querySelectorAll('.btn-plano');
-    botoesAssinar.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        alert('🚀 Obrigado pelo interesse! Em breve nossa equipe entrará em contato para finalizar sua assinatura.');
-      });
-    });
-
-    // Botões CTA (heróis e finais)
-    const ctaButtons = document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline');
-    ctaButtons.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (this.href && this.href !== '#') return;
-        e.preventDefault();
-        alert('📩 Solicitação de orçamento enviada! Aguarde o contato da nossa equipe.');
-      });
-    });
-
-    console.log('✅ ContaDigital — site modelo carregado com sucesso!');
-  })();
-</script>
-
+    </section>
+    <section class="planos">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-tag"></i> Planos</span>
+            <h2 class="section-title">Escolha o plano ideal para sua empresa</h2>
+            <p class="section-sub">Soluções que cabem no seu bolso, com transparência e sem surpresas.</p>
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <div class="plano-nome">Plano Essencial</div>
+                    <div class="plano-preco">R$ 99,99 <small>/mês</small></div>
+                    <div class="plano-desc">Ideal para microempresas ou empreendedores individuais.</div>
+                    <ul class="plano-lista">
+                        <li><i class="fas fa-check-circle"></i> Emissão de até 10 notas fiscais/mês</li>
+                        <li><i class="fas fa-check-circle"></i> Declaração mensal de impostos</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte contábil por e-mail</li>
+                        <li><i class="fas fa-check-circle"></i> Relatório financeiro básico</li>
+                    </ul>
+                    <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
+                </div>
+                <div class="plano-card destaque">
+                    <div class="plano-nome">Plano Profissional</div>
+                    <div class="plano-preco">R$ 269,99 <small>/mês</small></div>
+                    <div class="plano-desc">Perfeito para pequenas empresas que precisam de suporte abrangente.</div>
+                    <ul class="plano-lista">
+                        <li><i class="fas fa-check-circle"></i> Emissão de até 20 notas fiscais/mês</li>
+                        <li><i class="fas fa-check-circle"></i> Declaração + encargos trabalhistas</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte por e-mail e telefone</li>
+                        <li><i class="fas fa-check-circle"></i> Relatório financeiro detalhado</li>
+                        <li><i class="fas fa-check-circle"></i> Consultoria contábil trimestral</li>
+                    </ul>
+                    <a href="#" class="btn-plano">Assinar agora</a>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-nome">Plano Empresarial</div>
+                    <div class="plano-preco">R$ 699,99 <small>/mês</small></div>
+                    <div class="plano-desc">Solução completa para empresas que precisam de acompanhamento contínuo.</div>
+                    <ul class="plano-lista">
+                        <li><i class="fas fa-check-circle"></i> Notas fiscais ilimitadas</li>
+                        <li><i class="fas fa-check-circle"></i> Obrigações acessórias completas</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte ilimitado (chat, e-mail, telefone)</li>
+                        <li><i class="fas fa-check-circle"></i> Relatórios mensais e trimestrais</li>
+                        <li><i class="fas fa-check-circle"></i> Planejamento financeiro e consultoria</li>
+                    </ul>
+                    <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-imagem"><span style="background:rgba(255,255,255,0.7);backdrop-filter:blur(4px);padding:16px 32px;border-radius:60px;font-weight:700;font-size:1.5rem;color:#0b1a33;"><i class="fas fa-users"></i> Equipe qualificada</span></div>
+            <div class="sobre-texto">
+                <span class="section-tag"><i class="fas fa-info-circle"></i> Sobre nós</span>
+                <h2>Contabilidade transparente e sem burocracia</h2>
+                <p>Somos uma empresa de prestação de serviços contábeis, fiscais, trabalhistas e societários, que tem como objetivo atender empresas que desejam as melhores soluções para o seu desenvolvimento.</p>
+                <p>Investimos constantemente em alta tecnologia e contamos com profissionais que frequentemente aperfeiçoam suas competências técnicas. Somos motivados pela sua satisfação.</p>
+                <div class="sobre-numeros">
+                    <div class="numero-item"><strong>+500</strong><span>Clientes satisfeitos</span></div>
+                    <div class="numero-item"><strong>15</strong><span>Estados atendidos</span></div>
+                    <div class="numero-item"><strong>98%</strong><span>Taxa de satisfação</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="depoimentos">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-quote-right"></i> Depoimentos</span>
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-sub">A satisfação de quem confia em nosso trabalho é a nossa maior referência.</p>
+            <div class="depo-grid">
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“Equipe comprometida com a satisfação do cliente, atende todas as necessidades da minha empresa com agilidade e precisão.”</p><div class="autor">Cris Rosa</div><div class="cargo">CEO · Rosa Tech</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“As dúvidas são sempre esclarecidas com atendimento prestativo. Pagamentos realizados rigorosamente em dia. Excelente empresa!”</p><div class="autor">Anderson Mota</div><div class="cargo">Diretor · Mota Consultoria</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“Pontualidade na entrega de documentos e suporte atencioso. Sempre atendem prontamente minhas solicitações.”</p><div class="autor">Mariana Lopes</div><div class="cargo">Sócia · Lopes & Associados</div></div>
+            </div>
+        </div>
+    </section>
+    <section class="noticias">
+        <div class="container">
+            <span class="section-tag"><i class="fas fa-newspaper"></i> Atualidades</span>
+            <h2 class="section-title">Fique por dentro das novidades</h2>
+            <p class="section-sub">Notícias que podem afetar você e sua empresa. Acompanhe as últimas atualizações.</p>
+            <div class="noticias-grid">
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>Abono Salarial 2026: sexto lote é liberado para mais de 4,3 milhões de trabalhadores</h4><p style="color:#475569;margin-bottom:12px;">O pagamento do sexto lote do Abono Salarial PIS/Pasep referente ao ano-base 2024 começou nesta semana...</p><a href="#">Leia mais →</a></div>
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>Receita Federal lança painéis para consulta de dados estatísticos do IRPF</h4><p style="color:#475569;margin-bottom:12px;">A Receita Federal disponibilizou novos painéis interativos com informações consolidadas das declarações do IRPF...</p><a href="#">Leia mais →</a></div>
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>CNPJ terá serviços suspensos de 23 a 27 de julho para implantação de novo modelo</h4><p style="color:#475569;margin-bottom:12px;">Empresas e escritórios de contabilidade devem se programar para alterações no funcionamento da base cadastral...</p><a href="#">Leia mais →</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pare de perder tempo com burocracia</h2>
+            <p>Solicite um orçamento hoje mesmo e descubra soluções personalizadas para a sua empresa. A contabilidade da sua empresa pode ser mais simples e eficiente do que você imagina.</p>
+            <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero meu orçamento agora</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4><i class="fas fa-calculator"></i> ContaDigital</h4><p style="color:#94a3b8;font-size:0.95rem;">Soluções contábeis inteligentes para empresas de todos os portes.</p></div>
+                <div><h4>Serviços</h4><a href="#">Contabilidade</a><a href="#">Societário</a><a href="#">Fiscal</a><a href="#">Departamento Pessoal</a></div>
+                <div><h4>Institucional</h4><a href="#">Sobre nós</a><a href="#">Planos</a><a href="#">Depoimentos</a><a href="#">Notícias</a></div>
+                <div><h4>Contato</h4><a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a><a href="https://wa.me/5551998883187"><i class="fab fa-whatsapp"></i> (51) 9988-83187</a><a href="https://www.linkedin.com/in/fabiowlademir/"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://fabiowlademir.github.io/"><i class="fas fa-globe"></i> Portfólio</a></div>
+            </div>
+            <div class="footer-copy">&copy; 2026 ContaDigital · Todos os direitos reservados.</div>
+        </div>
+    </footer>
+    <a href="https://wa.me/5551998883187" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> Fale conosco</a>
+    <script>
+        document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline, .btn-plano').forEach(btn => {
+            btn.addEventListener('click', function(e) { if (this.href && this.href !== '#') return; e.preventDefault(); alert('📩 Solicitação enviada! Aguarde o contato da nossa equipe.'); });
+        });
+    </script>
 </body>
 </html>

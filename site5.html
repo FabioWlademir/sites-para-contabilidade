@@ -9,548 +9,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #F8F9FA;
-            color: #1E293B;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        a {
-            text-decoration: none;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: #0A2B4E;
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #F57C00;
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
-        }
-        .logo i {
-            color: #F57C00;
-            font-size: 1.8rem;
-        }
-        .logo span {
-            color: #F57C00;
-        }
-        .header-contato {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-        }
-        .header-contato a {
-            color: #E2E8F0;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 400;
-            transition: color 0.2s;
-        }
-        .header-contato a:hover {
-            color: #F57C00;
-        }
-        .header-contato i {
-            color: #F57C00;
-            font-size: 1rem;
-        }
-        .btn-cta-header {
-            background: #F57C00;
-            color: #0A2B4E !important;
-            padding: 10px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: background 0.2s, transform 0.1s;
-        }
-        .btn-cta-header:hover {
-            background: #FF9800 !important;
-            color: #0A2B4E !important;
-            transform: scale(1.02);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            padding: 64px 0 72px;
-            background: linear-gradient(135deg, #0A2B4E 0%, #1A4B7A 100%);
-            border-bottom: 2px solid #F57C00;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #ffffff;
-        }
-        .hero h1 i {
-            color: #F57C00;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #CBD5E1;
-            max-width: 520px;
-            margin-bottom: 28px;
-        }
-        .hero-botoes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-        .btn-primary {
-            background: #F57C00;
-            color: #0A2B4E;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .btn-primary:hover {
-            background: #FF9800;
-            transform: scale(1.02);
-        }
-        .btn-outline {
-            background: transparent;
-            color: #F57C00;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid #F57C00;
-            transition: background 0.2s, color 0.2s;
-        }
-        .btn-outline:hover {
-            background: #F57C00;
-            color: #0A2B4E;
-        }
-        .hero-imagem {
-            background: #1A4B7A;
-            border-radius: 24px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #F57C00;
-            border: 1px solid #2A5B8A;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-imagem span {
-            background: rgba(10, 43, 78, 0.85);
-            backdrop-filter: blur(4px);
-            padding: 16px 32px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.3rem;
-            color: #fff;
-            border: 1px solid #F57C00;
-        }
-
-        /* ===== BADGE ===== */
-        .badge {
-            display: inline-block;
-            background: #F57C00;
-            color: #0A2B4E;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 14px;
-            border-radius: 40px;
-            margin-bottom: 10px;
-        }
-
-        /* ===== POR QUE ABRIR ===== */
-        .porque {
-            padding: 72px 0;
-            background: #ffffff;
-        }
-        .porque-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 32px;
-            margin-top: 16px;
-        }
-        .porque-card {
-            text-align: center;
-            padding: 24px 16px;
-            border-radius: 16px;
-            background: #F8F9FA;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-bottom: 4px solid #F57C00;
-        }
-        .porque-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
-        }
-        .porque-card i {
-            font-size: 2.4rem;
-            color: #F57C00;
-            margin-bottom: 12px;
-        }
-        .porque-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #0A2B4E;
-        }
-        .porque-card p {
-            color: #64748B;
-            font-size: 0.9rem;
-        }
-
-        /* ===== PASSOS ===== */
-        .passos {
-            padding: 72px 0;
-            background: #F8F9FA;
-        }
-        .passos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
-            margin-top: 16px;
-            text-align: center;
-        }
-        .passo-item {
-            background: #ffffff;
-            padding: 32px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            border-top: 4px solid #0A2B4E;
-            transition: transform 0.2s;
-        }
-        .passo-item:hover {
-            transform: translateY(-4px);
-        }
-        .passo-numero {
-            display: inline-block;
-            background: #F57C00;
-            color: #0A2B4E;
-            font-weight: 800;
-            font-size: 1.2rem;
-            width: 48px;
-            height: 48px;
-            line-height: 48px;
-            border-radius: 50%;
-            margin-bottom: 12px;
-        }
-        .passo-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0A2B4E;
-            margin-bottom: 6px;
-        }
-        .passo-item p {
-            color: #64748B;
-            font-size: 0.9rem;
-        }
-
-        /* ===== PLANOS ===== */
-        .planos {
-            padding: 72px 0;
-            background: #ffffff;
-        }
-        .planos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-top: 16px;
-        }
-        .plano-card {
-            background: #F8F9FA;
-            border-radius: 20px;
-            padding: 32px 28px;
-            border: 1px solid #E2E8F0;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        .plano-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-        }
-        .plano-card.destaque {
-            border: 2px solid #F57C00;
-            background: #ffffff;
-        }
-        .plano-card.destaque::before {
-            content: "MAIS VENDIDO";
-            position: absolute;
-            top: -12px;
-            right: 24px;
-            background: #F57C00;
-            color: #0A2B4E;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 40px;
-            letter-spacing: 0.5px;
-        }
-        .plano-nome {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0A2B4E;
-        }
-        .plano-preco {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: #0A2B4E;
-            margin: 6px 0 4px;
-        }
-        .plano-preco small {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #64748B;
-        }
-        .plano-desc {
-            color: #64748B;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-        }
-        .plano-lista {
-            list-style: none;
-            margin: 12px 0 24px;
-            flex: 1;
-        }
-        .plano-lista li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #1E293B;
-        }
-        .plano-lista i {
-            color: #F57C00;
-            font-size: 1rem;
-            margin-top: 2px;
-        }
-        .btn-plano {
-            background: #0A2B4E;
-            color: #fff;
-            border: none;
-            padding: 14px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-plano:hover {
-            background: #1A4B7A;
-        }
-        .btn-plano-outline {
-            background: transparent;
-            color: #0A2B4E;
-            border: 2px solid #0A2B4E;
-        }
-        .btn-plano-outline:hover {
-            background: #0A2B4E;
-            color: #fff;
-        }
-
-        /* ===== DEPOIMENTOS ===== */
-        .depoimentos {
-            padding: 72px 0;
-            background: #F8F9FA;
-        }
-        .depo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-            margin-top: 16px;
-        }
-        .depo-card {
-            background: #ffffff;
-            padding: 24px 28px;
-            border-radius: 16px;
-            border-left: 4px solid #F57C00;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-        }
-        .depo-card .estrelas {
-            color: #F57C00;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .depo-card p {
-            font-style: italic;
-            color: #1E293B;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-        .depo-card .autor {
-            font-weight: 600;
-            color: #0A2B4E;
-        }
-        .depo-card .cargo {
-            color: #64748B;
-            font-size: 0.85rem;
-        }
-
-        /* ===== CTA FINAL ===== */
-        .cta-final {
-            padding: 64px 0;
-            background: #0A2B4E;
-            color: #fff;
-            text-align: center;
-            border-top: 4px solid #F57C00;
-        }
-        .cta-final h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-        }
-        .cta-final p {
-            color: #CBD5E1;
-            max-width: 600px;
-            margin: 0 auto 28px;
-            font-size: 1.1rem;
-        }
-        .cta-final .btn-primary {
-            background: #F57C00;
-            color: #0A2B4E;
-        }
-        .cta-final .btn-primary:hover {
-            background: #FF9800;
-        }
-
-        /* ===== RODAPÉ ===== */
-        footer {
-            background: #0A2B4E;
-            border-top: 1px solid #1A4B7A;
-            padding: 40px 0 24px;
-            color: #94A3B8;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 28px;
-            margin-bottom: 28px;
-        }
-        .footer-grid h4 {
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .footer-grid a {
-            color: #94A3B8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-        .footer-grid a:hover {
-            color: #F57C00;
-        }
-        .footer-copy {
-            border-top: 1px solid #1A4B7A;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #64748B;
-        }
-
-        /* ===== RESPONSIVIDADE ===== */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero-imagem {
-                height: 200px;
-            }
-        }
-        @media (max-width: 640px) {
-            .header-inner {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .header-contato {
-                justify-content: center;
-            }
-            .hero {
-                padding: 40px 0 56px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#F8F9FA; color:#1E293B; line-height:1.6; }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+        a { text-decoration:none; }
+        header { background:#0A2B4E; padding:14px 0; position:sticky; top:0; z-index:100; border-bottom:3px solid #F57C00; }
+        .header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+        .logo { font-size:1.6rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:10px; letter-spacing:-0.5px; }
+        .logo i { color:#F57C00; font-size:1.8rem; }
+        .logo span { color:#F57C00; }
+        .header-contato { display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-size:0.9rem; }
+        .header-contato a { color:#E2E8F0; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:400; transition:color 0.2s; }
+        .header-contato a:hover { color:#F57C00; }
+        .header-contato i { color:#F57C00; font-size:1rem; }
+        .btn-cta-header { background:#F57C00; color:#0A2B4E !important; padding:10px 28px; border-radius:40px; font-weight:600; transition:background 0.2s,transform 0.1s; }
+        .btn-cta-header:hover { background:#FF9800 !important; color:#0A2B4E !important; transform:scale(1.02); }
+        .hero { padding:64px 0 72px; background:linear-gradient(135deg,#0A2B4E,#1A4B7A); border-bottom:2px solid #F57C00; }
+        .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+        .hero h1 { font-size:2.8rem; font-weight:800; letter-spacing:-1px; line-height:1.2; margin-bottom:16px; color:#fff; }
+        .hero h1 i { color:#F57C00; }
+        .hero p { font-size:1.1rem; color:#CBD5E1; max-width:520px; margin-bottom:28px; }
+        .hero-botoes { display:flex; flex-wrap:wrap; gap:14px; }
+        .btn-primary { background:#F57C00; color:#0A2B4E; padding:14px 36px; border-radius:40px; font-weight:600; display:inline-flex; align-items:center; gap:10px; transition:background 0.2s,transform 0.1s; border:none; cursor:pointer; font-size:1rem; }
+        .btn-primary:hover { background:#FF9800; transform:scale(1.02); }
+        .btn-outline { background:transparent; color:#F57C00; padding:14px 36px; border-radius:40px; font-weight:600; border:2px solid #F57C00; transition:background 0.2s,color 0.2s; }
+        .btn-outline:hover { background:#F57C00; color:#0A2B4E; }
+        .hero-imagem { background:#1A4B7A; border-radius:24px; height:300px; display:flex; align-items:center; justify-content:center; font-size:4rem; color:#F57C00; border:1px solid #2A5B8A; overflow:hidden; }
+        .hero-imagem span { background:rgba(10,43,78,0.85); backdrop-filter:blur(4px); padding:16px 32px; border-radius:60px; font-weight:600; font-size:1.3rem; color:#fff; border:1px solid #F57C00; }
+        .badge { display:inline-block; background:#F57C00; color:#0A2B4E; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; padding:4px 14px; border-radius:40px; margin-bottom:10px; }
+        .porque { padding:72px 0; background:#fff; }
+        .porque-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:32px; margin-top:16px; }
+        .porque-card { text-align:center; padding:24px 16px; border-radius:16px; background:#F8F9FA; transition:transform 0.2s,box-shadow 0.2s; border-bottom:4px solid #F57C00; }
+        .porque-card:hover { transform:translateY(-6px); box-shadow:0 12px 32px rgba(0,0,0,0.05); }
+        .porque-card i { font-size:2.4rem; color:#F57C00; margin-bottom:12px; }
+        .porque-card h3 { font-size:1.1rem; font-weight:600; margin-bottom:6px; color:#0A2B4E; }
+        .porque-card p { color:#64748B; font-size:0.9rem; }
+        .passos { padding:72px 0; background:#F8F9FA; }
+        .passos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; margin-top:16px; text-align:center; }
+        .passo-item { background:#fff; padding:32px 20px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.03); border-top:4px solid #0A2B4E; transition:transform 0.2s; }
+        .passo-item:hover { transform:translateY(-4px); }
+        .passo-numero { display:inline-block; background:#F57C00; color:#0A2B4E; font-weight:800; font-size:1.2rem; width:48px; height:48px; line-height:48px; border-radius:50%; margin-bottom:12px; }
+        .passo-item h4 { font-size:1.1rem; font-weight:600; color:#0A2B4E; margin-bottom:6px; }
+        .passo-item p { color:#64748B; font-size:0.9rem; }
+        .planos { padding:72px 0; background:#fff; }
+        .planos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px; margin-top:16px; }
+        .plano-card { background:#F8F9FA; border-radius:20px; padding:32px 28px; border:1px solid #E2E8F0; transition:transform 0.2s,box-shadow 0.2s; display:flex; flex-direction:column; position:relative; }
+        .plano-card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.04); }
+        .plano-card.destaque { border:2px solid #F57C00; background:#fff; }
+        .plano-card.destaque::before { content:"MAIS VENDIDO"; position:absolute; top:-12px; right:24px; background:#F57C00; color:#0A2B4E; font-size:0.65rem; font-weight:700; padding:4px 16px; border-radius:40px; letter-spacing:0.5px; }
+        .plano-nome { font-size:1.1rem; font-weight:600; color:#0A2B4E; }
+        .plano-preco { font-size:2.4rem; font-weight:800; color:#0A2B4E; margin:6px 0 4px; }
+        .plano-preco small { font-size:1rem; font-weight:400; color:#64748B; }
+        .plano-desc { color:#64748B; margin-bottom:16px; font-size:0.95rem; }
+        .plano-lista { list-style:none; margin:12px 0 24px; flex:1; }
+        .plano-lista li { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-size:0.9rem; color:#1E293B; }
+        .plano-lista i { color:#F57C00; font-size:1rem; margin-top:2px; }
+        .btn-plano { background:#0A2B4E; color:#fff; border:none; padding:14px; border-radius:40px; font-weight:600; font-size:1rem; cursor:pointer; transition:background 0.2s; text-align:center; text-decoration:none; display:inline-block; }
+        .btn-plano:hover { background:#1A4B7A; }
+        .btn-plano-outline { background:transparent; color:#0A2B4E; border:2px solid #0A2B4E; }
+        .btn-plano-outline:hover { background:#0A2B4E; color:#fff; }
+        .depoimentos { padding:72px 0; background:#F8F9FA; }
+        .depo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin-top:16px; }
+        .depo-card { background:#fff; padding:24px 28px; border-radius:16px; border-left:4px solid #F57C00; box-shadow:0 4px 12px rgba(0,0,0,0.02); }
+        .depo-card .estrelas { color:#F57C00; letter-spacing:2px; margin-bottom:8px; }
+        .depo-card p { font-style:italic; color:#1E293B; margin-bottom:12px; font-size:0.95rem; }
+        .depo-card .autor { font-weight:600; color:#0A2B4E; }
+        .depo-card .cargo { color:#64748B; font-size:0.85rem; }
+        .cta-final { padding:64px 0; background:#0A2B4E; color:#fff; text-align:center; border-top:4px solid #F57C00; }
+        .cta-final h2 { font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:10px; }
+        .cta-final p { color:#CBD5E1; max-width:600px; margin:0 auto 28px; font-size:1.1rem; }
+        .cta-final .btn-primary { background:#F57C00; color:#0A2B4E; }
+        .cta-final .btn-primary:hover { background:#FF9800; }
+        footer { background:#0A2B4E; border-top:1px solid #1A4B7A; padding:40px 0 24px; color:#94A3B8; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:28px; margin-bottom:28px; }
+        .footer-grid h4 { color:#fff; font-weight:600; margin-bottom:10px; }
+        .footer-grid a { color:#94A3B8; text-decoration:none; display:block; margin-bottom:6px; font-size:0.9rem; }
+        .footer-grid a:hover { color:#F57C00; }
+        .footer-copy { border-top:1px solid #1A4B7A; padding-top:20px; text-align:center; font-size:0.85rem; color:#64748B; }
+        .whatsapp-float { position:fixed; bottom:25px; right:25px; background:#25d366; color:#fff; padding:14px 22px; border-radius:50px; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.9rem; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:999; animation:pulse 2s infinite; transition:0.3s; text-decoration:none; }
+        .whatsapp-float:hover { transform:scale(1.04); background:#1ebe5c; }
+        @keyframes pulse { 0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.6)} 70%{transform:scale(1.02);box-shadow:0 0 0 12px rgba(37,211,102,0)} 100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+        @media(max-width:992px){ .hero-grid{grid-template-columns:1fr} .hero h1{font-size:2.2rem} .hero-imagem{height:200px} }
+        @media(max-width:640px){ .header-inner{flex-direction:column;align-items:stretch} .header-contato{justify-content:center} .hero{padding:40px 0 56px} .hero h1{font-size:1.8rem} .section-title{font-size:1.8rem} }
     </style>
 </head>
 <body>
-
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="container header-inner">
-            <div class="logo">
-                <i class="fas fa-rocket"></i> Agil<span>ize</span>
-            </div>
+            <div class="logo"><i class="fas fa-rocket"></i> Agil<span>ize</span></div>
             <div class="header-contato">
-                <a href="mailto:contato@agilize.com.br"><i class="fas fa-envelope"></i> contato@agilize.com.br</a>
-                <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
+                <a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a>
+                <a href="https://wa.me/5551998883187"><i class="fas fa-phone-alt"></i> (51) 9988-83187</a>
                 <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Abrir empresa agora</a>
             </div>
         </div>
     </header>
-
-    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
@@ -562,163 +115,59 @@
                     <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Ver planos</a>
                 </div>
             </div>
-            <div class="hero-imagem">
-                <span><i class="fas fa-chart-line"></i> + Resultados · Menos burocracia</span>
-            </div>
+            <div class="hero-imagem"><span><i class="fas fa-chart-line"></i> + Resultados · Menos burocracia</span></div>
         </div>
     </section>
-
-    <!-- ===== POR QUE ABRIR COM A AGILIZE ===== -->
     <section class="porque">
         <div class="container">
-            <div style="text-align:center; margin-bottom:8px;">
-                <span class="badge"><i class="fas fa-star"></i> Por que abrir com a Agilize</span>
-            </div>
-            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#0A2B4E;">Tudo pensado para facilitar sua vida</h2>
-            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">Mais que contabilidade, é parceria.</p>
+            <div style="text-align:center;margin-bottom:8px;"><span class="badge"><i class="fas fa-star"></i> Por que abrir com a Agilize</span></div>
+            <h2 style="text-align:center;font-size:2.2rem;font-weight:700;letter-spacing:-0.5px;color:#0A2B4E;">Tudo pensado para facilitar sua vida</h2>
+            <p style="text-align:center;color:#64748B;max-width:600px;margin:0 auto 16px;">Mais que contabilidade, é parceria.</p>
             <div class="porque-grid">
-                <div class="porque-card">
-                    <i class="fas fa-laptop-house"></i>
-                    <h3>Abertura 100% online</h3>
-                    <p>Você faz todo o processo de forma rápida, sem precisar sair de casa.</p>
-                </div>
-                <div class="porque-card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Suporte especializado</h3>
-                    <p>Indicamos o melhor regime tributário e o CNAE ideal para sua empresa.</p>
-                </div>
-                <div class="porque-card">
-                    <i class="fas fa-map-pin"></i>
-                    <h3>Atendimento nacional</h3>
-                    <p>Atendemos todos os estados do Brasil, com praticidade e agilidade.</p>
-                </div>
-                <div class="porque-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Praticidade total</h3>
-                    <p>Gerencie as áreas financeira, contábil e de RH em um só lugar.</p>
-                </div>
+                <div class="porque-card"><i class="fas fa-laptop-house"></i><h3>Abertura 100% online</h3><p>Você faz todo o processo de forma rápida, sem precisar sair de casa.</p></div>
+                <div class="porque-card"><i class="fas fa-user-tie"></i><h3>Suporte especializado</h3><p>Indicamos o melhor regime tributário e o CNAE ideal para sua empresa.</p></div>
+                <div class="porque-card"><i class="fas fa-map-pin"></i><h3>Atendimento nacional</h3><p>Atendemos todos os estados do Brasil, com praticidade e agilidade.</p></div>
+                <div class="porque-card"><i class="fas fa-mobile-alt"></i><h3>Praticidade total</h3><p>Gerencie as áreas financeira, contábil e de RH em um só lugar.</p></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== PASSOS ===== -->
     <section class="passos">
         <div class="container">
-            <div style="text-align:center; margin-bottom:8px;">
-                <span class="badge"><i class="fas fa-list-ol"></i> Passo a passo</span>
-            </div>
-            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#0A2B4E;">Como funciona a abertura de empresa</h2>
-            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">Simplificamos cada etapa para você.</p>
+            <div style="text-align:center;margin-bottom:8px;"><span class="badge"><i class="fas fa-list-ol"></i> Passo a passo</span></div>
+            <h2 style="text-align:center;font-size:2.2rem;font-weight:700;letter-spacing:-0.5px;color:#0A2B4E;">Como funciona a abertura de empresa</h2>
+            <p style="text-align:center;color:#64748B;max-width:600px;margin:0 auto 16px;">Simplificamos cada etapa para você.</p>
             <div class="passos-grid">
-                <div class="passo-item">
-                    <div class="passo-numero">1</div>
-                    <h4>Consultoria especializada</h4>
-                    <p>Nossos contadores ajudam você a escolher o melhor regime tributário e estrutura.</p>
-                </div>
-                <div class="passo-item">
-                    <div class="passo-numero">2</div>
-                    <h4>Abertura da sua empresa</h4>
-                    <p>Assumimos toda a parte burocrática e iniciamos o processo, atualizando você em cada etapa.</p>
-                </div>
-                <div class="passo-item">
-                    <div class="passo-numero">3</div>
-                    <h4>Sua nova empresa tá pronta!</h4>
-                    <p>Após validação, sua empresa está aberta. Agora, focamos na sua contabilidade.</p>
-                </div>
+                <div class="passo-item"><div class="passo-numero">1</div><h4>Consultoria especializada</h4><p>Nossos contadores ajudam você a escolher o melhor regime tributário e estrutura.</p></div>
+                <div class="passo-item"><div class="passo-numero">2</div><h4>Abertura da sua empresa</h4><p>Assumimos toda a parte burocrática e iniciamos o processo, atualizando você em cada etapa.</p></div>
+                <div class="passo-item"><div class="passo-numero">3</div><h4>Sua nova empresa tá pronta!</h4><p>Após validação, sua empresa está aberta. Agora, focamos na sua contabilidade.</p></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== PLANOS ===== -->
     <section class="planos">
         <div class="container">
-            <div style="text-align:center; margin-bottom:8px;">
-                <span class="badge"><i class="fas fa-tags"></i> Planos</span>
-            </div>
-            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#0A2B4E;">Escolha o plano ideal para você</h2>
-            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">Planos completos, com suporte humano e tecnologia para simplificar sua rotina.</p>
-
+            <div style="text-align:center;margin-bottom:8px;"><span class="badge"><i class="fas fa-tags"></i> Planos</span></div>
+            <h2 style="text-align:center;font-size:2.2rem;font-weight:700;letter-spacing:-0.5px;color:#0A2B4E;">Escolha o plano ideal para você</h2>
+            <p style="text-align:center;color:#64748B;max-width:600px;margin:0 auto 16px;">Planos completos, com suporte humano e tecnologia para simplificar sua rotina.</p>
             <div class="planos-grid">
-                <!-- Plano Basic -->
-                <div class="plano-card">
-                    <div class="plano-nome">Basic</div>
-                    <div class="plano-preco">R$ 259,00 <small>/mês</small></div>
-                    <div class="plano-desc">Perfeito para quem precisa de suporte, autonomia e agilidade.</div>
-                    <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> Abertura de CNPJ grátis*</li>
-                        <li><i class="fas fa-check-circle"></i> Contabilidade completa</li>
-                        <li><i class="fas fa-check-circle"></i> Certificado digital A1 incluso</li>
-                        <li><i class="fas fa-check-circle"></i> Atendimento multicanal</li>
-                        <li><i class="fas fa-check-circle"></i> Painel contábil completo</li>
-                    </ul>
-                    <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
-                </div>
-
-                <!-- Plano Unique (Destaque) -->
-                <div class="plano-card destaque">
-                    <div class="plano-nome">Unique</div>
-                    <div class="plano-preco">R$ 450,00 <small>/mês</small></div>
-                    <div class="plano-desc">Tenha um gerente de conta dedicado para sua empresa.</div>
-                    <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> Todos os benefícios do Basic</li>
-                        <li><i class="fas fa-check-circle"></i> Gerente de conta dedicado</li>
-                        <li><i class="fas fa-check-circle"></i> Atendimento até 21h</li>
-                        <li><i class="fas fa-check-circle"></i> Gestão de folha: até 5 pessoas</li>
-                        <li><i class="fas fa-check-circle"></i> Declaração de IRPF gratuita*</li>
-                    </ul>
-                    <a href="#" class="btn-plano">Assinar agora</a>
-                </div>
-
-                <!-- Plano Unique Plus -->
-                <div class="plano-card">
-                    <div class="plano-nome">Unique Plus</div>
-                    <div class="plano-preco">R$ 700,00 <small>/mês</small></div>
-                    <div class="plano-desc">Para quem tem uma operação maior e mais demandas.</div>
-                    <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> Todos os benefícios do Unique</li>
-                        <li><i class="fas fa-check-circle"></i> Até 100 operações/mês</li>
-                        <li><i class="fas fa-check-circle"></i> Importação até 800 notas fiscais</li>
-                        <li><i class="fas fa-check-circle"></i> Importação de extrato: até 3 contas</li>
-                    </ul>
-                    <a href="#" class="btn-plano btn-plano-outline">Assinar agora</a>
-                </div>
+                <div class="plano-card"><div class="plano-nome">Basic</div><div class="plano-preco">R$ 259,00 <small>/mês</small></div><div class="plano-desc">Perfeito para quem precisa de suporte, autonomia e agilidade.</div><ul class="plano-lista"><li><i class="fas fa-check-circle"></i> Abertura de CNPJ grátis*</li><li><i class="fas fa-check-circle"></i> Contabilidade completa</li><li><i class="fas fa-check-circle"></i> Certificado digital A1 incluso</li><li><i class="fas fa-check-circle"></i> Atendimento multicanal</li><li><i class="fas fa-check-circle"></i> Painel contábil completo</li></ul><a href="#" class="btn-plano btn-plano-outline">Assinar agora</a></div>
+                <div class="plano-card destaque"><div class="plano-nome">Unique</div><div class="plano-preco">R$ 450,00 <small>/mês</small></div><div class="plano-desc">Tenha um gerente de conta dedicado para sua empresa.</div><ul class="plano-lista"><li><i class="fas fa-check-circle"></i> Todos os benefícios do Basic</li><li><i class="fas fa-check-circle"></i> Gerente de conta dedicado</li><li><i class="fas fa-check-circle"></i> Atendimento até 21h</li><li><i class="fas fa-check-circle"></i> Gestão de folha: até 5 pessoas</li><li><i class="fas fa-check-circle"></i> Declaração de IRPF gratuita*</li></ul><a href="#" class="btn-plano">Assinar agora</a></div>
+                <div class="plano-card"><div class="plano-nome">Unique Plus</div><div class="plano-preco">R$ 700,00 <small>/mês</small></div><div class="plano-desc">Para quem tem uma operação maior e mais demandas.</div><ul class="plano-lista"><li><i class="fas fa-check-circle"></i> Todos os benefícios do Unique</li><li><i class="fas fa-check-circle"></i> Até 100 operações/mês</li><li><i class="fas fa-check-circle"></i> Importação até 800 notas fiscais</li><li><i class="fas fa-check-circle"></i> Importação de extrato: até 3 contas</li></ul><a href="#" class="btn-plano btn-plano-outline">Assinar agora</a></div>
             </div>
-            <p style="text-align:center; color:#94A3B8; font-size:0.85rem; margin-top:20px;">*Consulte condições e cidades disponíveis. Valores para empresas do Simples Nacional.</p>
+            <p style="text-align:center;color:#94A3B8;font-size:0.85rem;margin-top:20px;">*Consulte condições e cidades disponíveis. Valores para empresas do Simples Nacional.</p>
         </div>
     </section>
-
-    <!-- ===== DEPOIMENTOS ===== -->
     <section class="depoimentos">
         <div class="container">
-            <div style="text-align:center; margin-bottom:8px;">
-                <span class="badge"><i class="fas fa-quote-right"></i> Depoimentos</span>
-            </div>
-            <h2 style="text-align:center; font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; color:#0A2B4E;">O que nossos clientes dizem</h2>
-            <p style="text-align:center; color:#64748B; max-width:600px; margin:0 auto 16px;">Faça como os mais de 50 mil empreendedores que confiam na Agilize.</p>
+            <div style="text-align:center;margin-bottom:8px;"><span class="badge"><i class="fas fa-quote-right"></i> Depoimentos</span></div>
+            <h2 style="text-align:center;font-size:2.2rem;font-weight:700;letter-spacing:-0.5px;color:#0A2B4E;">O que nossos clientes dizem</h2>
+            <p style="text-align:center;color:#64748B;max-width:600px;margin:0 auto 16px;">Faça como os mais de 50 mil empreendedores que confiam na Agilize.</p>
             <div class="depo-grid">
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“A Agilize é uma contabilidade de fácil acesso, tenho tudo na mão, bem explicado e bem tranquilo de mexer. O suporte é bem adequado, sempre sou respondido na hora.”</p>
-                    <div class="autor">Matheus Menezes</div>
-                    <div class="cargo">Médico</div>
-                </div>
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Atendimento excelente, tanto para contratar como o suporte a todo momento que precisa. Cada vez que uso fico mais feliz por ter contratado a Agilize.”</p>
-                    <div class="autor">Sileno de Oliveira Brito</div>
-                    <div class="cargo">Nerd4Ever</div>
-                </div>
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“O que mais me surpreende na Agilize é o quanto tudo é simples e prático. A plataforma funciona de forma intuitiva e o suporte é sempre ágil e atencioso.”</p>
-                    <div class="autor">Fátima Reis</div>
-                    <div class="cargo">Empreendedora</div>
-                </div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“A Agilize é uma contabilidade de fácil acesso, tenho tudo na mão, bem explicado e bem tranquilo de mexer. O suporte é bem adequado, sempre sou respondido na hora.”</p><div class="autor">Matheus Menezes</div><div class="cargo">Médico</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“Atendimento excelente, tanto para contratar como o suporte a todo momento que precisa. Cada vez que uso fico mais feliz por ter contratado a Agilize.”</p><div class="autor">Sileno de Oliveira Brito</div><div class="cargo">Nerd4Ever</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“O que mais me surpreende na Agilize é o quanto tudo é simples e prático. A plataforma funciona de forma intuitiva e o suporte é sempre ágil e atencioso.”</p><div class="autor">Fátima Reis</div><div class="cargo">Empreendedora</div></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== CTA FINAL ===== -->
     <section class="cta-final">
         <div class="container">
             <h2>Descomplique. Cresça. Agilize.</h2>
@@ -726,53 +175,22 @@
             <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero abrir minha empresa</a>
         </div>
     </section>
-
-    <!-- ===== RODAPÉ ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h4><i class="fas fa-rocket"></i> Agilize</h4>
-                    <p style="color:#94A3B8; font-size:0.9rem;">A primeira contabilidade online do Brasil. Simplificamos a sua rotina.</p>
-                </div>
-                <div>
-                    <h4>Serviços</h4>
-                    <a href="#">Abertura de empresa</a>
-                    <a href="#">Contabilidade</a>
-                    <a href="#">Departamento pessoal</a>
-                    <a href="#">Certificado digital</a>
-                </div>
-                <div>
-                    <h4>Institucional</h4>
-                    <a href="#">Sobre nós</a>
-                    <a href="#">Planos</a>
-                    <a href="#">Depoimentos</a>
-                    <a href="#">Blog</a>
-                </div>
-                <div>
-                    <h4>Contato</h4>
-                    <a href="mailto:contato@agilize.com.br"><i class="fas fa-envelope"></i> contato@agilize.com.br</a>
-                    <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
-                    <a href="#"><i class="fab fa-instagram"></i> @agilize</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> /agilize</a>
-                </div>
+                <div><h4><i class="fas fa-rocket"></i> Agilize</h4><p style="color:#94A3B8;font-size:0.9rem;">A primeira contabilidade online do Brasil. Simplificamos a sua rotina.</p></div>
+                <div><h4>Serviços</h4><a href="#">Abertura de empresa</a><a href="#">Contabilidade</a><a href="#">Departamento pessoal</a><a href="#">Certificado digital</a></div>
+                <div><h4>Institucional</h4><a href="#">Sobre nós</a><a href="#">Planos</a><a href="#">Depoimentos</a><a href="#">Blog</a></div>
+                <div><h4>Contato</h4><a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a><a href="https://wa.me/5551998883187"><i class="fab fa-whatsapp"></i> (51) 9988-83187</a><a href="https://www.linkedin.com/in/fabiowlademir/"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://fabiowlademir.github.io/"><i class="fas fa-globe"></i> Portfólio</a></div>
             </div>
-            <div class="footer-copy">
-                &copy; 2026 Agilize · Todos os direitos reservados. · CNPJ: 17.664.581/0001-69
-            </div>
+            <div class="footer-copy">&copy; 2026 Agilize · Todos os direitos reservados. · CNPJ: 17.664.581/0001-69</div>
         </div>
     </footer>
-
-    <!-- ===== JS ===== -->
+    <a href="https://wa.me/5551998883187" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> Fale conosco</a>
     <script>
         document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline, .btn-plano').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (this.href && this.href !== '#') return;
-                e.preventDefault();
-                alert('🚀 Obrigado pelo interesse! Em breve nossa equipe entrará em contato para abrir sua empresa.');
-            });
+            btn.addEventListener('click', function(e){ if(this.href && this.href !== '#') return; e.preventDefault(); alert('🚀 Obrigado pelo interesse! Em breve nossa equipe entrará em contato.'); });
         });
     </script>
-
 </body>
 </html>

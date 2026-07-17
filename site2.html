@@ -9,499 +9,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', 'Inter', sans-serif;
-            background: #f5f5f5;
-            color: #1E1E1E;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: #1E1E1E;
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #7B1E7A;
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo i {
-            color: #EE7300;
-            font-size: 1.8rem;
-        }
-        .logo span {
-            color: #EE7300;
-        }
-        .header-contato {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-        }
-        .header-contato a {
-            color: #EBEBEB;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 400;
-            transition: color 0.2s;
-        }
-        .header-contato a:hover {
-            color: #EE7300;
-        }
-        .header-contato i {
-            color: #EE7300;
-            font-size: 1rem;
-        }
-        .btn-cta-header {
-            background: #EE7300;
-            color: #1E1E1E !important;
-            padding: 10px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: background 0.2s, transform 0.1s;
-        }
-        .btn-cta-header:hover {
-            background: #7B1E7A !important;
-            color: #fff !important;
-            transform: scale(1.02);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            padding: 60px 0 80px;
-            background: linear-gradient(135deg, #1E1E1E 0%, #2a2a2a 100%);
-            border-bottom: 2px solid #7B1E7A;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #ffffff;
-        }
-        .hero h1 i {
-            color: #EE7300;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #ccc;
-            max-width: 520px;
-            margin-bottom: 28px;
-        }
-        .hero-botoes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-        .btn-primary {
-            background: #EE7300;
-            color: #1E1E1E;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .btn-primary:hover {
-            background: #7B1E7A;
-            color: #fff;
-            transform: scale(1.02);
-        }
-        .btn-outline {
-            background: transparent;
-            color: #EE7300;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid #EE7300;
-            transition: background 0.2s, color 0.2s;
-        }
-        .btn-outline:hover {
-            background: #EE7300;
-            color: #1E1E1E;
-        }
-        .hero-imagem {
-            background: #2a2a2a;
-            border-radius: 24px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #EE7300;
-            border: 1px solid #333;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-imagem span {
-            background: rgba(30, 30, 30, 0.8);
-            backdrop-filter: blur(4px);
-            padding: 16px 32px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.4rem;
-            color: #fff;
-            border: 1px solid #7B1E7A;
-        }
-
-        /* ===== SERVIÇOS ===== */
-        .servicos {
-            padding: 72px 0;
-            background: #ffffff;
-        }
-        .section-tag {
-            display: inline-block;
-            background: #7B1E7A;
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 6px 18px;
-            border-radius: 40px;
-            margin-bottom: 12px;
-        }
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-            color: #1E1E1E;
-        }
-        .section-sub {
-            color: #525252;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 28px;
-        }
-        .servico-card {
-            background: #f9f9f9;
-            padding: 28px 20px;
-            border-radius: 16px;
-            border-left: 4px solid #7B1E7A;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .servico-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-        }
-        .servico-card i {
-            font-size: 2.2rem;
-            color: #EE7300;
-            margin-bottom: 12px;
-        }
-        .servico-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #1E1E1E;
-        }
-        .servico-card p {
-            color: #525252;
-            font-size: 0.9rem;
-        }
-
-        /* ===== SOBRE ===== */
-        .sobre {
-            padding: 72px 0;
-            background: #EBEBEB;
-        }
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .sobre-imagem {
-            background: #d5d5d5;
-            border-radius: 24px;
-            height: 240px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            color: #7B1E7A;
-            border: 2px solid #7B1E7A;
-        }
-        .sobre-texto h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1E1E1E;
-        }
-        .sobre-texto p {
-            color: #525252;
-            margin-bottom: 14px;
-        }
-        .sobre-numeros {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin-top: 20px;
-        }
-        .numero-item strong {
-            display: block;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #7B1E7A;
-        }
-        .numero-item span {
-            color: #525252;
-            font-size: 0.85rem;
-        }
-
-        /* ===== DEPOIMENTOS ===== */
-        .depoimentos {
-            padding: 72px 0;
-            background: #ffffff;
-        }
-        .depo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 24px;
-            margin-top: 16px;
-        }
-        .depo-card {
-            background: #f9f9f9;
-            padding: 24px;
-            border-radius: 16px;
-            border-top: 4px solid #EE7300;
-        }
-        .depo-card .estrelas {
-            color: #EE7300;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .depo-card p {
-            font-style: italic;
-            color: #1E1E1E;
-            margin-bottom: 12px;
-        }
-        .depo-card .autor {
-            font-weight: 600;
-            color: #1E1E1E;
-        }
-        .depo-card .cargo {
-            color: #525252;
-            font-size: 0.85rem;
-        }
-
-        /* ===== NOTÍCIAS ===== */
-        .noticias {
-            padding: 72px 0;
-            background: #EBEBEB;
-        }
-        .noticias-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
-            margin-top: 16px;
-        }
-        .noticia-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 24px;
-            border-bottom: 4px solid #7B1E7A;
-            transition: transform 0.2s;
-        }
-        .noticia-card:hover {
-            transform: translateY(-4px);
-        }
-        .noticia-card .data {
-            font-size: 0.75rem;
-            color: #7B1E7A;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-        .noticia-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 8px 0 10px;
-            color: #1E1E1E;
-        }
-        .noticia-card p {
-            color: #525252;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        .noticia-card a {
-            color: #EE7300;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .noticia-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== CTA FINAL ===== */
-        .cta-final {
-            padding: 64px 0;
-            background: #1E1E1E;
-            color: #fff;
-            text-align: center;
-            border-top: 4px solid #7B1E7A;
-        }
-        .cta-final h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-        }
-        .cta-final p {
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto 28px;
-            font-size: 1.1rem;
-        }
-        .cta-final .btn-primary {
-            background: #EE7300;
-            color: #1E1E1E;
-        }
-        .cta-final .btn-primary:hover {
-            background: #7B1E7A;
-            color: #fff;
-        }
-
-        /* ===== RODAPÉ ===== */
-        footer {
-            background: #1E1E1E;
-            border-top: 1px solid #333;
-            padding: 40px 0 24px;
-            color: #999;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 28px;
-            margin-bottom: 28px;
-        }
-        .footer-grid h4 {
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .footer-grid a {
-            color: #999;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-        .footer-grid a:hover {
-            color: #EE7300;
-        }
-        .footer-copy {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        /* ===== RESPONSIVIDADE ===== */
-        @media (max-width: 992px) {
-            .hero-grid,
-            .sobre-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero-imagem {
-                height: 200px;
-            }
-            .sobre-imagem {
-                height: 180px;
-            }
-        }
-        @media (max-width: 640px) {
-            .header-inner {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .header-contato {
-                justify-content: center;
-            }
-            .hero {
-                padding: 40px 0 56px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Poppins','Inter',sans-serif; background:#f5f5f5; color:#1E1E1E; line-height:1.6; }
+        .container { max-width:1140px; margin:0 auto; padding:0 24px; }
+        header { background:#1E1E1E; padding:16px 0; position:sticky; top:0; z-index:100; border-bottom:3px solid #7B1E7A; }
+        .header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+        .logo { font-size:1.6rem; font-weight:700; color:#fff; display:flex; align-items:center; gap:10px; }
+        .logo i { color:#EE7300; font-size:1.8rem; }
+        .logo span { color:#EE7300; }
+        .header-contato { display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-size:0.9rem; }
+        .header-contato a { color:#EBEBEB; text-decoration:none; display:flex; align-items:center; gap:8px; transition:color 0.2s; }
+        .header-contato a:hover { color:#EE7300; }
+        .header-contato i { color:#EE7300; font-size:1rem; }
+        .btn-cta-header { background:#EE7300; color:#1E1E1E !important; padding:10px 28px; border-radius:40px; font-weight:600; transition:background 0.2s,transform 0.1s; }
+        .btn-cta-header:hover { background:#7B1E7A !important; color:#fff !important; transform:scale(1.02); }
+        .hero { padding:60px 0 80px; background:linear-gradient(135deg,#1E1E1E,#2a2a2a); border-bottom:2px solid #7B1E7A; }
+        .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+        .hero h1 { font-size:2.8rem; font-weight:700; letter-spacing:-0.5px; line-height:1.2; margin-bottom:16px; color:#fff; }
+        .hero h1 i { color:#EE7300; }
+        .hero p { font-size:1.1rem; color:#ccc; max-width:520px; margin-bottom:28px; }
+        .hero-botoes { display:flex; flex-wrap:wrap; gap:14px; }
+        .btn-primary { background:#EE7300; color:#1E1E1E; padding:14px 36px; border-radius:40px; font-weight:600; display:inline-flex; align-items:center; gap:10px; transition:background 0.2s,transform 0.1s; border:none; cursor:pointer; font-size:1rem; }
+        .btn-primary:hover { background:#7B1E7A; color:#fff; transform:scale(1.02); }
+        .btn-outline { background:transparent; color:#EE7300; padding:14px 36px; border-radius:40px; font-weight:600; border:2px solid #EE7300; transition:background 0.2s,color 0.2s; }
+        .btn-outline:hover { background:#EE7300; color:#1E1E1E; }
+        .hero-imagem { background:#2a2a2a; border-radius:24px; height:300px; display:flex; align-items:center; justify-content:center; font-size:4rem; color:#EE7300; border:1px solid #333; overflow:hidden; }
+        .hero-imagem span { background:rgba(30,30,30,0.8); backdrop-filter:blur(4px); padding:16px 32px; border-radius:60px; font-weight:600; font-size:1.4rem; color:#fff; border:1px solid #7B1E7A; }
+        .section-tag { display:inline-block; background:#7B1E7A; color:#fff; font-weight:600; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; padding:6px 18px; border-radius:40px; margin-bottom:12px; }
+        .section-title { font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:10px; color:#1E1E1E; }
+        .section-sub { color:#525252; max-width:600px; margin-bottom:40px; }
+        .servicos { padding:72px 0; background:#fff; }
+        .servicos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:28px; }
+        .servico-card { background:#f9f9f9; padding:28px 20px; border-radius:16px; border-left:4px solid #7B1E7A; transition:transform 0.2s,box-shadow 0.2s; }
+        .servico-card:hover { transform:translateY(-6px); box-shadow:0 12px 32px rgba(0,0,0,0.06); }
+        .servico-card i { font-size:2.2rem; color:#EE7300; margin-bottom:12px; }
+        .servico-card h3 { font-size:1.1rem; font-weight:600; margin-bottom:6px; color:#1E1E1E; }
+        .servico-card p { color:#525252; font-size:0.9rem; }
+        .sobre { padding:72px 0; background:#EBEBEB; }
+        .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+        .sobre-imagem { background:#d5d5d5; border-radius:24px; height:240px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; color:#7B1E7A; border:2px solid #7B1E7A; }
+        .sobre-texto h2 { font-size:2rem; font-weight:700; margin-bottom:12px; color:#1E1E1E; }
+        .sobre-texto p { color:#525252; margin-bottom:14px; }
+        .sobre-numeros { display:flex; flex-wrap:wrap; gap:28px; margin-top:20px; }
+        .numero-item strong { display:block; font-size:2rem; font-weight:700; color:#7B1E7A; }
+        .numero-item span { color:#525252; font-size:0.85rem; }
+        .depoimentos { padding:72px 0; background:#fff; }
+        .depo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; margin-top:16px; }
+        .depo-card { background:#f9f9f9; padding:24px; border-radius:16px; border-top:4px solid #EE7300; }
+        .depo-card .estrelas { color:#EE7300; letter-spacing:2px; margin-bottom:8px; }
+        .depo-card p { font-style:italic; color:#1E1E1E; margin-bottom:12px; }
+        .depo-card .autor { font-weight:600; color:#1E1E1E; }
+        .depo-card .cargo { color:#525252; font-size:0.85rem; }
+        .noticias { padding:72px 0; background:#EBEBEB; }
+        .noticias-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px; margin-top:16px; }
+        .noticia-card { background:#fff; border-radius:16px; padding:24px; border-bottom:4px solid #7B1E7A; transition:transform 0.2s; }
+        .noticia-card:hover { transform:translateY(-4px); }
+        .noticia-card .data { font-size:0.75rem; color:#7B1E7A; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+        .noticia-card h4 { font-size:1rem; font-weight:600; margin:8px 0 10px; color:#1E1E1E; }
+        .noticia-card p { color:#525252; font-size:0.9rem; margin-bottom:10px; }
+        .noticia-card a { color:#EE7300; font-weight:600; text-decoration:none; }
+        .noticia-card a:hover { text-decoration:underline; }
+        .cta-final { padding:64px 0; background:#1E1E1E; color:#fff; text-align:center; border-top:4px solid #7B1E7A; }
+        .cta-final h2 { font-size:2.2rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:10px; }
+        .cta-final p { color:#ccc; max-width:600px; margin:0 auto 28px; font-size:1.1rem; }
+        .cta-final .btn-primary { background:#EE7300; color:#1E1E1E; }
+        .cta-final .btn-primary:hover { background:#7B1E7A; color:#fff; }
+        footer { background:#1E1E1E; border-top:1px solid #333; padding:40px 0 24px; color:#999; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:28px; margin-bottom:28px; }
+        .footer-grid h4 { color:#fff; font-weight:600; margin-bottom:10px; }
+        .footer-grid a { color:#999; text-decoration:none; display:block; margin-bottom:6px; font-size:0.9rem; }
+        .footer-grid a:hover { color:#EE7300; }
+        .footer-copy { border-top:1px solid #333; padding-top:20px; text-align:center; font-size:0.85rem; color:#666; }
+        .whatsapp-float { position:fixed; bottom:25px; right:25px; background:#25d366; color:#fff; padding:14px 22px; border-radius:50px; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.9rem; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:999; animation:pulse 2s infinite; transition:0.3s; text-decoration:none; }
+        .whatsapp-float:hover { transform:scale(1.04); background:#1ebe5c; }
+        @keyframes pulse { 0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.6)} 70%{transform:scale(1.02);box-shadow:0 0 0 12px rgba(37,211,102,0)} 100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+        @media(max-width:992px){ .hero-grid,.sobre-grid{grid-template-columns:1fr} .hero h1{font-size:2.2rem} .hero-imagem{height:200px} .sobre-imagem{height:180px} }
+        @media(max-width:640px){ .header-inner{flex-direction:column;align-items:stretch} .header-contato{justify-content:center} .hero{padding:40px 0 56px} .hero h1{font-size:1.8rem} .section-title{font-size:1.8rem} }
     </style>
 </head>
 <body>
-
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="container header-inner">
-            <div class="logo">
-                <i class="fas fa-calculator"></i> Conta<span>26</span>
-            </div>
+            <div class="logo"><i class="fas fa-calculator"></i> Conta<span>26</span></div>
             <div class="header-contato">
-                <a href="mailto:contato@conta26.com.br"><i class="fas fa-envelope"></i> contato@conta26.com.br</a>
-                <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
+                <a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a>
+                <a href="https://wa.me/5551998883187"><i class="fas fa-phone-alt"></i> (51) 9988-83187</a>
                 <a href="#" class="btn-cta-header"><i class="fas fa-paper-plane"></i> Solicitar orçamento</a>
             </div>
         </div>
     </header>
-
-    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
@@ -513,143 +109,64 @@
                     <a href="#" class="btn-outline"><i class="fas fa-play-circle"></i> Conheça nossos planos</a>
                 </div>
             </div>
-            <div class="hero-imagem">
-                <span><i class="fas fa-chart-line"></i> + Resultados</span>
-            </div>
+            <div class="hero-imagem"><span><i class="fas fa-chart-line"></i> + Resultados</span></div>
         </div>
     </section>
-
-    <!-- ===== SERVIÇOS ===== -->
     <section class="servicos">
         <div class="container">
             <span class="section-tag"><i class="fas fa-briefcase"></i> Nossos serviços</span>
             <h2 class="section-title">Soluções ideais para o seu negócio</h2>
             <p class="section-sub">Do societário ao departamento pessoal, temos a estrutura completa para sua empresa.</p>
             <div class="servicos-grid">
-                <div class="servico-card">
-                    <i class="fas fa-building"></i>
-                    <h3>Societário</h3>
-                    <p>Serviços completos em questões legais e administrativas.</p>
-                </div>
-                <div class="servico-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Contabilidade</h3>
-                    <p>Departamento contábil pronto para atender suas necessidades.</p>
-                </div>
-                <div class="servico-card">
-                    <i class="fas fa-coins"></i>
-                    <h3>Financeiro</h3>
-                    <p>Terceirização do financeiro para você focar na gestão.</p>
-                </div>
-                <div class="servico-card">
-                    <i class="fas fa-user-plus"></i>
-                    <h3>Abertura de Empresa</h3>
-                    <p>Abra sua empresa com a estrutura mais adequada.</p>
-                </div>
-                <div class="servico-card">
-                    <i class="fas fa-file-invoice"></i>
-                    <h3>Fiscal</h3>
-                    <p>Assessoria completa para obrigações fiscais.</p>
-                </div>
-                <div class="servico-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Departamento Pessoal</h3>
-                    <p>Execução completa da rotina de RH com agilidade.</p>
-                </div>
+                <div class="servico-card"><i class="fas fa-building"></i><h3>Societário</h3><p>Serviços completos em questões legais e administrativas.</p></div>
+                <div class="servico-card"><i class="fas fa-balance-scale"></i><h3>Contabilidade</h3><p>Departamento contábil pronto para atender suas necessidades.</p></div>
+                <div class="servico-card"><i class="fas fa-coins"></i><h3>Financeiro</h3><p>Terceirização do financeiro para você focar na gestão.</p></div>
+                <div class="servico-card"><i class="fas fa-user-plus"></i><h3>Abertura de Empresa</h3><p>Abra sua empresa com a estrutura mais adequada.</p></div>
+                <div class="servico-card"><i class="fas fa-file-invoice"></i><h3>Fiscal</h3><p>Assessoria completa para obrigações fiscais.</p></div>
+                <div class="servico-card"><i class="fas fa-users"></i><h3>Departamento Pessoal</h3><p>Execução completa da rotina de RH com agilidade.</p></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== SOBRE ===== -->
     <section class="sobre">
         <div class="container sobre-grid">
-            <div class="sobre-imagem">
-                <span style="background:rgba(255,255,255,0.85); padding:16px 28px; border-radius:60px; font-weight:600; font-size:1.4rem; color:#1E1E1E;">
-                    <i class="fas fa-users"></i> Equipe qualificada
-                </span>
-            </div>
+            <div class="sobre-imagem"><span style="background:rgba(255,255,255,0.85);padding:16px 28px;border-radius:60px;font-weight:600;font-size:1.4rem;color:#1E1E1E;"><i class="fas fa-users"></i> Equipe qualificada</span></div>
             <div class="sobre-texto">
                 <span class="section-tag"><i class="fas fa-info-circle"></i> Sobre nós</span>
                 <h2>Contabilidade transparente e sem burocracia</h2>
                 <p>Somos uma empresa de prestação de serviços contábeis, fiscais, trabalhistas e societários, com foco em soluções para o seu desenvolvimento.</p>
                 <p>Investimos em alta tecnologia e contamos com profissionais que aperfeiçoam constantemente suas competências.</p>
                 <div class="sobre-numeros">
-                    <div class="numero-item">
-                        <strong>+500</strong>
-                        <span>Clientes satisfeitos</span>
-                    </div>
-                    <div class="numero-item">
-                        <strong>15</strong>
-                        <span>Estados atendidos</span>
-                    </div>
-                    <div class="numero-item">
-                        <strong>98%</strong>
-                        <span>Taxa de satisfação</span>
-                    </div>
+                    <div class="numero-item"><strong>+500</strong><span>Clientes satisfeitos</span></div>
+                    <div class="numero-item"><strong>15</strong><span>Estados atendidos</span></div>
+                    <div class="numero-item"><strong>98%</strong><span>Taxa de satisfação</span></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ===== DEPOIMENTOS ===== -->
     <section class="depoimentos">
         <div class="container">
             <span class="section-tag"><i class="fas fa-quote-right"></i> Depoimentos</span>
             <h2 class="section-title">O que nossos clientes dizem</h2>
             <p class="section-sub">A satisfação de quem confia em nosso trabalho é a nossa maior referência.</p>
             <div class="depo-grid">
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Equipe comprometida com a satisfação do cliente, atende todas as necessidades da minha empresa com agilidade e precisão.”</p>
-                    <div class="autor">Cris Rosa</div>
-                    <div class="cargo">CEO · Rosa Tech</div>
-                </div>
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“As dúvidas são sempre esclarecidas com atendimento prestativo. Pagamentos realizados rigorosamente em dia.”</p>
-                    <div class="autor">Anderson Mota</div>
-                    <div class="cargo">Diretor · Mota Consultoria</div>
-                </div>
-                <div class="depo-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Pontualidade na entrega de documentos e suporte atencioso. Sempre atendem prontamente minhas solicitações.”</p>
-                    <div class="autor">Mariana Lopes</div>
-                    <div class="cargo">Sócia · Lopes & Associados</div>
-                </div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“Equipe comprometida com a satisfação do cliente, atende todas as necessidades da minha empresa com agilidade e precisão.”</p><div class="autor">Cris Rosa</div><div class="cargo">CEO · Rosa Tech</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“As dúvidas são sempre esclarecidas com atendimento prestativo. Pagamentos realizados rigorosamente em dia.”</p><div class="autor">Anderson Mota</div><div class="cargo">Diretor · Mota Consultoria</div></div>
+                <div class="depo-card"><div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“Pontualidade na entrega de documentos e suporte atencioso. Sempre atendem prontamente minhas solicitações.”</p><div class="autor">Mariana Lopes</div><div class="cargo">Sócia · Lopes & Associados</div></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== NOTÍCIAS ===== -->
     <section class="noticias">
         <div class="container">
             <span class="section-tag"><i class="fas fa-newspaper"></i> Atualidades</span>
             <h2 class="section-title">Fique por dentro das novidades</h2>
             <p class="section-sub">Notícias que podem afetar você e sua empresa.</p>
             <div class="noticias-grid">
-                <div class="noticia-card">
-                    <div class="data">16/07/2026</div>
-                    <h4>Abono Salarial 2026: sexto lote é liberado para mais de 4,3 milhões de trabalhadores</h4>
-                    <p>O pagamento do sexto lote do Abono Salarial PIS/Pasep referente ao ano-base 2024 começou nesta semana...</p>
-                    <a href="#">Leia mais →</a>
-                </div>
-                <div class="noticia-card">
-                    <div class="data">16/07/2026</div>
-                    <h4>Receita Federal lança painéis para consulta de dados estatísticos do IRPF</h4>
-                    <p>A Receita Federal disponibilizou novos painéis interativos com informações consolidadas das declarações do IRPF...</p>
-                    <a href="#">Leia mais →</a>
-                </div>
-                <div class="noticia-card">
-                    <div class="data">16/07/2026</div>
-                    <h4>CNPJ terá serviços suspensos de 23 a 27 de julho para implantação de novo modelo</h4>
-                    <p>Empresas e escritórios de contabilidade devem se programar para alterações no funcionamento da base cadastral...</p>
-                    <a href="#">Leia mais →</a>
-                </div>
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>Abono Salarial 2026: sexto lote é liberado para mais de 4,3 milhões</h4><p>O pagamento do sexto lote do Abono Salarial PIS/Pasep referente ao ano-base 2024 começou nesta semana...</p><a href="#">Leia mais →</a></div>
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>Receita Federal lança painéis para consulta de dados estatísticos do IRPF</h4><p>A Receita Federal disponibilizou novos painéis interativos com informações consolidadas das declarações do IRPF...</p><a href="#">Leia mais →</a></div>
+                <div class="noticia-card"><div class="data">16/07/2026</div><h4>CNPJ terá serviços suspensos de 23 a 27 de julho para implantação de novo modelo</h4><p>Empresas e escritórios de contabilidade devem se programar para alterações no funcionamento da base cadastral...</p><a href="#">Leia mais →</a></div>
             </div>
         </div>
     </section>
-
-    <!-- ===== CTA FINAL ===== -->
     <section class="cta-final">
         <div class="container">
             <h2>Pare de perder tempo com burocracia</h2>
@@ -657,58 +174,22 @@
             <a href="#" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero meu orçamento agora</a>
         </div>
     </section>
-
-    <!-- ===== RODAPÉ ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h4><i class="fas fa-calculator"></i> Conta26</h4>
-                    <p style="color:#999; font-size:0.9rem;">Soluções contábeis inteligentes para empresas de todos os portes.</p>
-                </div>
-                <div>
-                    <h4>Serviços</h4>
-                    <a href="#">Contabilidade</a>
-                    <a href="#">Societário</a>
-                    <a href="#">Fiscal</a>
-                    <a href="#">Departamento Pessoal</a>
-                </div>
-                <div>
-                    <h4>Institucional</h4>
-                    <a href="#">Sobre nós</a>
-                    <a href="#">Planos</a>
-                    <a href="#">Depoimentos</a>
-                    <a href="#">Notícias</a>
-                </div>
-                <div>
-                    <h4>Contato</h4>
-                    <a href="mailto:contato@conta26.com.br"><i class="fas fa-envelope"></i> contato@conta26.com.br</a>
-                    <a href="tel:+551133334444"><i class="fas fa-phone-alt"></i> (11) 3333-4444</a>
-                    <a href="#"><i class="fab fa-instagram"></i> @conta26</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> /conta26</a>
-                </div>
+                <div><h4><i class="fas fa-calculator"></i> Conta26</h4><p style="color:#999;font-size:0.9rem;">Soluções contábeis inteligentes para empresas de todos os portes.</p></div>
+                <div><h4>Serviços</h4><a href="#">Contabilidade</a><a href="#">Societário</a><a href="#">Fiscal</a><a href="#">Departamento Pessoal</a></div>
+                <div><h4>Institucional</h4><a href="#">Sobre nós</a><a href="#">Planos</a><a href="#">Depoimentos</a><a href="#">Notícias</a></div>
+                <div><h4>Contato</h4><a href="mailto:fabiowlademirrs@gmail.com"><i class="fas fa-envelope"></i> fabiowlademirrs@gmail.com</a><a href="https://wa.me/5551998883187"><i class="fab fa-whatsapp"></i> (51) 9988-83187</a><a href="https://www.linkedin.com/in/fabiowlademir/"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://fabiowlademir.github.io/"><i class="fas fa-globe"></i> Portfólio</a></div>
             </div>
-            <div class="footer-copy">
-                &copy; 2026 Conta26 · Todos os direitos reservados.
-            </div>
+            <div class="footer-copy">&copy; 2026 Conta26 · Todos os direitos reservados.</div>
         </div>
     </footer>
-
+    <a href="https://wa.me/5551998883187" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> Fale conosco</a>
     <script>
         document.querySelectorAll('.btn-primary, .btn-cta-header, .btn-outline').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (this.href && this.href !== '#') return;
-                e.preventDefault();
-                alert('📩 Solicitação de orçamento enviada! Aguarde o contato da nossa equipe.');
-            });
-        });
-        document.querySelectorAll('.btn-plano').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('🚀 Obrigado pelo interesse! Em breve nossa equipe entrará em contato.');
-            });
+            btn.addEventListener('click', function(e) { if (this.href && this.href !== '#') return; e.preventDefault(); alert('📩 Solicitação de orçamento enviada! Aguarde o contato da nossa equipe.'); });
         });
     </script>
-
 </body>
 </html>
